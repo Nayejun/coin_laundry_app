@@ -18,6 +18,7 @@ export default function Home() {
         팔레트 기능 테스트
       </div>
       <div style={{ color: theme.darkColors.status1 }}>팔레트 기능 테스트</div>
+      <p className="text-blue-500 text-xl font-bold text-9xl">test</p>
     </>
   );
 }
