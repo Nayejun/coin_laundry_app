@@ -25,10 +25,8 @@ const ToggleSwitch = ({
   knobSizeOn = "24px",
   knobColorOff = "#74757F",
   knobColorOn = "#FFF",
-  knobBorderThickness = "4px",
   trackColorOn = "#0066FF",
   trackColorOff = "#70737C",
-  borderColor = "transparent",
   borderThickness = "0px",
   opacity = 0.43,
   disabled = false,
@@ -63,7 +61,8 @@ const ToggleSwitch = ({
   const knobColor = isChecked ? knobColorOn : knobColorOff
 
   // Calculate the knob margin to center it vertically
-  const knobMargin = isChecked ? `4px`: `6px`
+  const knobMargin = isChecked ? `2px`: `6px`
+  const borderColor = isChecked ? "transparent" : "#74757F"
 
   return (
     <label
@@ -94,7 +93,7 @@ const ToggleSwitch = ({
           position: "absolute",
           top: knobMargin, // Center the knob vertically
           left: isChecked
-            ? `calc(${trackWidth}px - ${knobSize} - ${borderThickness} - ${knobMargin})`
+            ? `22px`
             : `calc(${borderThickness} + ${knobMargin})`, // Position right or left
           transition: "left 0.2s, top 0.2s, width 0.2s, height 0.2s, background-color 0.2s",
           width: knobSize,
@@ -104,7 +103,6 @@ const ToggleSwitch = ({
           boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)", // Optional: Adds shadow for more depth
           boxSizing: "border-box",
         }}
-        onClick={toggleSwitch}
       />
     </label>
   )
