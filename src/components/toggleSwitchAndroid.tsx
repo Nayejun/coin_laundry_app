@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ToggleSwitch from "@/components/ui/toggleSwitchForAndroid"; // Update this import path if necessary
+import ToggleSwitchForAndroid from "@/components/ui/toggleSwitchForAndroid"; // Update this import path if necessary
 
 export default function ToggleSwitchAndroid() {
   const [isActive, setIsActive] = useState(true); // Set initial state to true
@@ -39,7 +39,7 @@ export default function ToggleSwitchAndroid() {
               </span>
             </div>
             <div className="space-x-4">
-              <ToggleSwitch
+              <ToggleSwitchForAndroid
                 initialChecked={false}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -52,7 +52,7 @@ export default function ToggleSwitchAndroid() {
                 borderThickness="2px"
                 opacity={1}
               />
-              <ToggleSwitch
+              <ToggleSwitchForAndroid
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -60,8 +60,10 @@ export default function ToggleSwitchAndroid() {
                 knobColorOff="#74757F"
                 knobColorOn="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
-                borderColor="#70737C29"
+                trackColorOff="#70737C"
+                trackOpacityOff={0.16}
+                trackOpacityOn={1}
+                borderColor="#70737C"
                 borderThickness="2px"
                 opacity={1}
                 borderOpacity={1}
@@ -87,13 +89,13 @@ export default function ToggleSwitchAndroid() {
               </span>
             </div>
             <div className="space-x-4">
-            <ToggleSwitch
+            <ToggleSwitchForAndroid
                 initialChecked={false}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
                 knobSizeOn="24px"
                 knobColorOff="#74757F"
-                knobColorOn="#FFF"
+                knobColorOn="#FFFFFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#E1E2EC"
                 borderColor="#74757F"
@@ -101,7 +103,7 @@ export default function ToggleSwitchAndroid() {
                 opacity={1}
                 disabled={true}
               />
-              <ToggleSwitch
+              <ToggleSwitchForAndroid
                 initialChecked={false}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -109,7 +111,7 @@ export default function ToggleSwitchAndroid() {
                 knobColorOff="#1B1B1F"
                 knobColorOn="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#FFF"
+                trackColorOff="transparent"
                 borderColor="#1B1B1F"
                 borderThickness="2px"
                 opacity={0.38}
@@ -118,7 +120,7 @@ export default function ToggleSwitchAndroid() {
               />
             </div>
             <div className="space-x-4">
-              <ToggleSwitch
+              <ToggleSwitchForAndroid
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -126,14 +128,14 @@ export default function ToggleSwitchAndroid() {
                 knobColorOff="#74757F"
                 knobColorOn="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
-                borderColor="#70737C29"
+                trackColorOff="#70737C"
+                borderColor="#70737C"
                 borderThickness="2px"
                 opacity={1}
                 borderOpacity={1}
                 disabled={true}
               />
-              <ToggleSwitch
+              <ToggleSwitchForAndroid
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -141,8 +143,10 @@ export default function ToggleSwitchAndroid() {
                 knobColorOff="#74757F"
                 knobColorOn="#FFF"
                 trackColorOn="#1B1B1F"
-                trackColorOff="#70737C29"
-                borderColor="#70737C29"
+                trackColorOff="#70737C"
+                trackOpacityOff={0.16}
+                trackOpacityOn={1}
+                borderColor="#70737C"
                 borderThickness="2px"
                 borderOpacity={1}
                 opacity={0.12}

@@ -4,13 +4,14 @@ import { useState } from "react"
 
 import { ToggleSwitchProps } from "@/lib/types"
 
-const ToggleSwitchForAndroid = ({
+
+const ToggleSwitchForIOS = ({
   initialChecked = false,
   onToggle,
-  knobSizeOff = "16px",
-  knobSizeOn = "24px",
+  knobSizeOff = "29px",
+  knobSizeOn = "29px",
+  knobColorOff = "#FFF",
   knobColorOn = "#FFF",
-  knobColorOff = "#74757F",
   trackColorOff = "#70737C",
   trackColorOn = "#0066FF",
   trackOpacityOff = 0.5,
@@ -30,8 +31,11 @@ const ToggleSwitchForAndroid = ({
     }
   }
 
-  const trackWidth = 52
-  const trackHeight = 32
+  const trackWidth = 51
+  const trackHeight = 31
+
+  // Calculate the knob margin to equally space it from top, bottom, and sides
+  const knobMargin = `calc((${trackHeight}px - ${knobSizeOn}) / 2)`
 
   // Function to convert hex color to rgba with the given opacity
   const rgbaBorderColor = (color: string, opacity: number) => {
@@ -45,25 +49,6 @@ const ToggleSwitchForAndroid = ({
     return color.replace('rgb', 'rgba').replace(')', `,${opacity})`)
   }
 
-  const rgbaColor = (color: string, opacity: number) => {
-    if (color.startsWith('#')) {
-      const bigint = parseInt(color.slice(1), 16)
-      const r = (bigint >> 16) & 255
-      const g = (bigint >> 8) & 255
-      const b = (bigint & 255)
-      return `rgba(${r},${g},${b},${opacity})`
-    }
-    return color.replace('rgb', 'rgba').replace(')', `,${opacity})`)
-  }
-
-  // Dynamic knob size and color based on isChecked state
-  const knobSize = isChecked ? knobSizeOn : knobSizeOff
-  const knobColor = isChecked ? knobColorOn : knobColorOff
-
-  // Calculate the knob margin to center it vertically
-  const knobMargin = isChecked ? `2px`: `6px`
-  borderColor = isChecked ? "transparent" : "#74757F"
-
   return (
     <label
       style={{
@@ -72,9 +57,7 @@ const ToggleSwitchForAndroid = ({
         width: `${trackWidth}px`, // Track width stays the same
         height: `${trackHeight}px`, // Track height stays the same
         borderRadius: `${trackHeight / 2}px`, // Half the height to create a perfect oval shape
-        backgroundColor: isChecked 
-          ? rgbaColor(trackColorOn, trackOpacityOn) 
-          : rgbaColor(trackColorOff, trackOpacityOff),
+        backgroundColor: isChecked ? trackColorOn : trackColorOff,
         border: `${borderThickness} solid ${rgbaBorderColor(borderColor, borderOpacity)}`,
         transition: "background-color 0.2s, border-color 0.2s",
         cursor: disabled ? "not-allowed" : "pointer",
@@ -93,15 +76,15 @@ const ToggleSwitchForAndroid = ({
       <span
         style={{
           position: "absolute",
-          top: knobMargin, // Center the knob vertically
+          top: `calc((${borderThickness} + ${knobMargin})`, // Center the knob vertically
           left: isChecked
-            ? `22px`
+            ? `calc(${trackWidth}px - ${knobSizeOn} - ${borderThickness} - ${knobMargin})`
             : `calc(${borderThickness} + ${knobMargin})`, // Position right or left
-          transition: "left 0.2s, top 0.2s, width 0.2s, height 0.2s, background-color 0.2s",
-          width: knobSize,
-          height: knobSize,
+          transition: "left 0.2s",
+          width: knobSizeOn,
+          height: knobSizeOn,
           borderRadius: "50%",
-          backgroundColor: knobColor,
+          backgroundColor: knobColorOn,
           boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)", // Optional: Adds shadow for more depth
           boxSizing: "border-box",
         }}
@@ -110,4 +93,4 @@ const ToggleSwitchForAndroid = ({
   )
 }
 
-export default ToggleSwitchForAndroid
+export default ToggleSwitchForIOS

@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import ToggleSwitch from "@/components/ui/toggleSwitch";
+import ToggleSwitchForWeb from "@/components/ui/toggleSwitchForWeb";
 
 export default function ToggleSwitchWeb() {
   const [isActive, setIsActive] = useState(true); // Set initial state to true
 
-  const handleActiveToggle = (checked: boolean | ((prevState: boolean) => boolean)) => {
+  const handleActiveToggle = (
+    checked: boolean | ((prevState: boolean) => boolean)
+  ) => {
     setIsActive(checked);
     console.log("Active toggle is now:", checked ? "On" : "Off");
   };
@@ -39,25 +41,34 @@ export default function ToggleSwitchWeb() {
               </span>
             </div>
             <div className="space-x-4">
-              <ToggleSwitch
+              <ToggleSwitchForWeb
                 initialChecked={false}
                 onToggle={handleActiveToggle}
-                knobSize="24px"
-                knobColor="#FFF"
+                knobSizeOn="24px"
+                knobSizeOff="24px"
+                knobColorOn="#FFF"
+                knobColorOff="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
+                trackColorOff="#70737C"
+                trackOpacityOff={0.16}
+                trackOpacityOn={1}
                 borderColor="#0066FF"
                 borderThickness="0px"
                 opacity={1}
+                borderOpacity={1}
               />
-              <ToggleSwitch
+              <ToggleSwitchForWeb
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
-                knobSize="24px"
-                knobColor="#FFF"
+                knobSizeOn="24px"
+                knobSizeOff="24px"
+                knobColorOff="#FFF"
+                knobColorOn="#FFF"
+                trackColorOff="#70737C"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
-                borderColor="#70737C29"
+                trackOpacityOff={0.16}
+                trackOpacityOn={1}
+                borderColor="#70737C"
                 borderThickness="0px"
                 opacity={1}
                 borderOpacity={1}
@@ -85,35 +96,45 @@ export default function ToggleSwitchWeb() {
             </div>
             <div className="space-x-4">
               {/* Reduced horizontal space */}
-              <ToggleSwitch
+              <ToggleSwitchForWeb
                 initialChecked={false} // Set initial checked state directly
-                knobSize="24px"
-                knobColor="#FFF"
+                knobSizeOff="24px"
+                knobSizeOn="24px"
+                knobColorOn="#FFF"
+                knobColorOff="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
-                borderColor="#70737C29"
+                trackColorOff="#70737C"
+                trackOpacityOff={0.16}
+                trackOpacityOn={1}
+                borderColor="#70737C"
                 borderThickness="0px"
                 opacity={1}
                 disabled={true}
               />
-              <ToggleSwitch
+              <ToggleSwitchForWeb
                 initialChecked={false} // Set initial checked state directly
-                knobSize="24px"
-                knobColor="#FFF"
+                knobSizeOff="24px"
+                knobSizeOn="24px"
+                knobColorOn="#FFF"
+                knobColorOff="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
-                borderColor="#70737C29"
+                trackColorOff="#70737C"
+                trackOpacityOff={0.07}
+                trackOpacityOn={1}
+                borderColor="#70737C"
                 borderThickness="0px"
-                opacity={0.5}
+                opacity={1}
                 disabled={true}
               />
             </div>
             <div className="space-x-4">
               {/* Reduced horizontal space */}
-              <ToggleSwitch
+              <ToggleSwitchForWeb
                 initialChecked={true} // Set initial checked state directly
-                knobSize="24px"
-                knobColor="#FFF"
+                knobSizeOff="24px"
+                knobSizeOn="24px"
+                knobColorOn="#FFF"
+                knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C29"
                 borderColor="#70737C29"
@@ -121,10 +142,12 @@ export default function ToggleSwitchWeb() {
                 opacity={1}
                 disabled={true}
               />
-              <ToggleSwitch
+              <ToggleSwitchForWeb
                 initialChecked={true} // Set initial checked state directly
-                knobSize="24px"
-                knobColor="#FFF"
+                knobSizeOff="24px"
+                knobSizeOn="24px"
+                knobColorOn="#FFF"
+                knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C29"
                 borderColor="#70737C29"
