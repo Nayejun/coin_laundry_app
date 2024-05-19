@@ -5,6 +5,8 @@ export type ToggleSwitchProps = {
   knobSizeOn?: string;
   knobColorOff?: string;
   knobColorOn?: string;
+  knobOpacityOff?: number;
+  knobOpacityOn?: number;
   knobMarginOff?: string;
   knobMarginOn?: string;
   trackColorOff?: string;
@@ -16,4 +18,20 @@ export type ToggleSwitchProps = {
   borderOpacity?: number;
   opacity?: number;
   disabled?: boolean;
-}
+};
+
+export type ActionButtonProps = {
+  label: string;
+  onClick: () => void;
+  disabled?: boolean;
+  color: string;
+};
+
+export type TabProps = {
+  label: string;
+  content: React.ReactNode;
+};
+
+export type DisabledContentProps = {
+  color: string;
+};

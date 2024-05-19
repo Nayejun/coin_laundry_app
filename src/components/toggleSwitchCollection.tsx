@@ -27,8 +27,10 @@ export default function ToggleSwitchCollection() {
         boxSizing: "border-box",
         borderRadius: "10px",
         overflow: "hidden",
-        width: "800px",
+        width: "780px",
         height: "100px",
+        marginLeft: "10px",
+        marginTop: "10px",
       }}
     >
       <svg
@@ -88,8 +90,8 @@ export default function ToggleSwitchCollection() {
           onToggle={handleActiveToggle}
           knobSizeOn="24px"
           knobSizeOff="24px"
-          knobColorOff="#FFF"
-          knobColorOn="#FFF"
+          knobColorOff="#FFFFFF"
+          knobColorOn="#FFFFFF"
           trackColorOff="#70737C"
           trackColorOn="#0066FF"
           trackOpacityOff={0.16}
@@ -103,11 +105,11 @@ export default function ToggleSwitchCollection() {
           initialChecked={false} // Set initial checked state directly
           knobSizeOff="24px"
           knobSizeOn="24px"
-          knobColorOn="#FFF"
-          knobColorOff="#FFF"
+          knobColorOn="#FFFFFF"
+          knobColorOff="#FFFFFF"
           trackColorOn="#0066FF"
           trackColorOff="#70737C"
-          trackOpacityOff={0.07}
+          trackOpacityOff={0.08}
           trackOpacityOn={1}
           borderColor="#70737C"
           borderThickness="0px"
@@ -118,8 +120,8 @@ export default function ToggleSwitchCollection() {
           initialChecked={true} // Set initial checked state directly
           knobSizeOff="24px"
           knobSizeOn="24px"
-          knobColorOn="#FFF"
-          knobColorOff="#FFF"
+          knobColorOn="#FFFFFF"
+          knobColorOff="#FFFFFF"
           trackColorOn="#0066FF"
           trackColorOff="#70737C29"
           borderColor="#70737C29"
@@ -133,12 +135,17 @@ export default function ToggleSwitchCollection() {
           knobSizeOff="16px"
           knobSizeOn="24px"
           knobColorOff="#74757F"
-          knobColorOn="#FFF"
+          knobColorOn="#FFFFFF"
+          knobOpacityOff={1}
+          knobOpacityOn={1}
           trackColorOn="#0066FF"
           trackColorOff="#E1E2EC"
-          borderColor="#74757F"
+          trackOpacityOff={1}
+          trackOpacityOn={1}
+          borderColor="#70737C"
           borderThickness="2px"
           opacity={1}
+          borderOpacity={1}
         />
         <ToggleSwitchForAndroid
           initialChecked={isActive}
@@ -146,7 +153,9 @@ export default function ToggleSwitchCollection() {
           knobSizeOff="16px"
           knobSizeOn="24px"
           knobColorOff="#74757F"
-          knobColorOn="#FFF"
+          knobColorOn="#FFFFFF"
+          knobOpacityOff={1}
+          knobOpacityOn={1}
           trackColorOn="#0066FF"
           trackColorOff="#70737C"
           trackOpacityOff={0.16}
@@ -162,13 +171,17 @@ export default function ToggleSwitchCollection() {
           knobSizeOff="16px"
           knobSizeOn="24px"
           knobColorOff="#1B1B1F"
-          knobColorOn="#FFF"
+          knobColorOn="#FFFFFF"
+          knobOpacityOff={1}
+          knobOpacityOn={1}
           trackColorOn="#0066FF"
-          trackColorOff="transparent"
+          trackColorOff="#FFFFFF"
+          trackOpacityOff={1}
+          trackOpacityOn={1}
           borderColor="#1B1B1F"
           borderThickness="2px"
-          opacity={0.38}
           borderOpacity={0.4}
+          opacity={0.38}
           disabled={true}
         />
         <ToggleSwitchForAndroid
@@ -177,15 +190,17 @@ export default function ToggleSwitchCollection() {
           knobSizeOff="16px"
           knobSizeOn="24px"
           knobColorOff="#74757F"
-          knobColorOn="#FFF"
+          knobColorOn="#FEFBFF"
+          knobOpacityOff={1}
+          knobOpacityOn={1}
           trackColorOn="#1B1B1F"
           trackColorOff="#70737C"
-          trackOpacityOff={0.16}
-          trackOpacityOn={1}
+          trackOpacityOff={1}
+          trackOpacityOn={0.1}
           borderColor="#70737C"
           borderThickness="2px"
           borderOpacity={1}
-          opacity={0.12}
+          opacity={1}
           disabled={true}
         />
         <ToggleSwitchForIOS
@@ -194,7 +209,7 @@ export default function ToggleSwitchCollection() {
           knobSizeOn="27px"
           knobSizeOff="27px"
           knobColorOn="#FFF"
-          knobColorOff="#FFF"
+          knobColorOff="#787880"
           trackColorOn="#0066FF"
           trackColorOff="#70737C29"
           borderColor="#0066FF"
@@ -219,7 +234,7 @@ export default function ToggleSwitchCollection() {
           initialChecked={false} // Set initial checked state directly
           knobSizeOff="27px"
           knobSizeOn="27px"
-          knobColorOn="#FFF"
+          knobColorOn="#FFFFFF"
           knobColorOff="#FFF"
           trackColorOn="#0066FF"
           trackColorOff="#70737C29"

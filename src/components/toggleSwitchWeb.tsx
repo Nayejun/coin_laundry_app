@@ -119,7 +119,7 @@ export default function ToggleSwitchWeb() {
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C"
-                trackOpacityOff={0.07}
+                trackOpacityOff={0.08}
                 trackOpacityOn={1}
                 borderColor="#70737C"
                 borderThickness="0px"
