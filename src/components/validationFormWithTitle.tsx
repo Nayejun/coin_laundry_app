@@ -41,7 +41,7 @@ const ValidationFormWithTitle: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen ">
+    <div className="flex h-screen ">
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-lg bg-white p-8 rounded-lg space-y-4">
         <div className="relative">
           <label htmlFor="email" className="block text-gray-700 font-bold mb-2" style={{ fontSize: '14px' }}>

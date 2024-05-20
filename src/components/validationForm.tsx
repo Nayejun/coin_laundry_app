@@ -41,7 +41,7 @@ const ValidationForm: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen ">
+    <div className="flex h-screen ">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-lg bg-white p-8 rounded-lg space-y-4"

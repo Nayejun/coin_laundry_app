@@ -4,7 +4,7 @@ import ValidationForm from "@/components/validationForm";
 
 const Page: FC = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex mx-[10px] my-[10px] h-screen">
       
       <ValidationForm />
       <ValidationFormWithTitle />
