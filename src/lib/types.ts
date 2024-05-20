@@ -24,3 +24,8 @@ export type ActionButtonProps = {
   label: string;
   onClick: () => void;
 };
+
+export type RatingStarsProps = {
+  defaultValue: number;
+  onChange: (value: number) => void;
+};

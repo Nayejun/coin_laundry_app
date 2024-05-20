@@ -41,7 +41,7 @@ const ValidationForm: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen ">
+    <div className="flex">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-lg bg-white p-8 rounded-lg space-y-4"
@@ -141,7 +141,7 @@ const ValidationForm: React.FC = () => {
               className="text-red-500 text-xs mt-2"
               style={{ fontSize: "12px", color: "#FF4242" }}
             >
-              The Title must match
+              The title must match
             </div>
           )}
         </div>
