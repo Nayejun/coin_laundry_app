@@ -23,15 +23,4 @@ export type ToggleSwitchProps = {
 export type ActionButtonProps = {
   label: string;
   onClick: () => void;
-  disabled?: boolean;
-  color: string;
-};
-
-export type TabProps = {
-  label: string;
-  content: React.ReactNode;
-};
-
-export type DisabledContentProps = {
-  color: string;
 };

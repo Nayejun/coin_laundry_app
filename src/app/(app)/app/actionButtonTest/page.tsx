@@ -1,13 +1,16 @@
-// src/app/actionButtonTest/page.tsx
 "use client";
 
 import React, { FC } from "react";
-import TabNavigation from "@/components/tabNavigation";
+import ActionButton from "@/components/ui/actionButton";
 
 const Page: FC = () => {
+  const handleClick = () => {
+    console.log("Button clicked!");
+  };
+
   return (
-    <div className="flex justify-center items-center h-screen">
-      <TabNavigation />
+    <div className="flex  mx-[10px] my-[10px] h-screen">
+      <ActionButton label="행동" onClick={handleClick} />
     </div>
   );
 };

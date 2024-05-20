@@ -17,15 +17,19 @@ const config: Config = {
       colors: {
         'custom-gray': '#70737C',
         'background-light': '#F7F7F8', // Custom background color
+        'primary': '#13C2C2',
+        'hover-primary': '#00A5A1',
+        'active-primary': '#008781',
       },
-      
       opacity: {
         '16': '0.16',
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['active'],
+    },
   },
   plugins: [],
 };
