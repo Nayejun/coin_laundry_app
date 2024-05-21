@@ -29,6 +29,9 @@ const config: Config = {
   variants: {
     extend: {
       backgroundColor: ['active'],
+      fontFamily: {
+        pretendard: ['var(--font-pretendard)'],
+      },
     },
   },
   plugins: [
