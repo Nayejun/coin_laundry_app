@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ToggleSwitchForAndroid from "@/components/ui/toggleSwitchForAndroid"; // Update this import path if necessary
+import ToggleSwitchForAndroid from "@/components/ui/toggleSwitch"; // Update this import path if necessary
 
 export default function ToggleSwitchAndroid() {
   const [isActive, setIsActive] = useState(true); // Set initial state to true
@@ -39,7 +39,8 @@ export default function ToggleSwitchAndroid() {
               </span>
             </div>
             <div className="space-x-4">
-            <ToggleSwitchForAndroid
+              <ToggleSwitchForAndroid
+                deviceType="Android"
                 initialChecked={false}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -58,6 +59,7 @@ export default function ToggleSwitchAndroid() {
                 borderOpacity={1}
               />
               <ToggleSwitchForAndroid
+                deviceType="Android"
                 initialChecked={true}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -96,7 +98,8 @@ export default function ToggleSwitchAndroid() {
               </span>
             </div>
             <div className="space-x-4">
-            <ToggleSwitchForAndroid
+              <ToggleSwitchForAndroid
+                deviceType="Android"
                 initialChecked={false}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -116,6 +119,7 @@ export default function ToggleSwitchAndroid() {
                 disabled={true}
               />
               <ToggleSwitchForAndroid
+                deviceType="Android"
                 initialChecked={false}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -137,6 +141,7 @@ export default function ToggleSwitchAndroid() {
             </div>
             <div className="space-x-4">
               <ToggleSwitchForAndroid
+                deviceType="Android"
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -156,6 +161,7 @@ export default function ToggleSwitchAndroid() {
                 disabled={true}
               />
               <ToggleSwitchForAndroid
+                deviceType="Android"
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
                 knobSizeOff="16px"
@@ -167,14 +173,13 @@ export default function ToggleSwitchAndroid() {
                 trackColorOn="#1B1B1F"
                 trackColorOff="#70737C"
                 trackOpacityOff={1}
-                trackOpacityOn={.1}
+                trackOpacityOn={0.1}
                 borderColor="#70737C"
                 borderThickness="2px"
                 borderOpacity={1}
                 opacity={1}
                 disabled={true}
               />
-
             </div>
           </div>
         </div>

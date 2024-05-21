@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ToggleSwitchForIOS from "@/components/ui/toggleSwitchForIOS";
+import ToggleSwitch from "@/components/ui/toggleSwitch";
 
 export default function ToggleSwitchIOS() {
   const [isActive, setIsActive] = useState(true); // Set initial state to true
@@ -41,28 +41,34 @@ export default function ToggleSwitchIOS() {
               </span>
             </div>
             <div className="space-x-4">
-              <ToggleSwitchForIOS
+              <ToggleSwitch
+                deviceType="IOS"
                 initialChecked={false}
                 onToggle={handleActiveToggle}
                 knobSizeOn="27px"
                 knobSizeOff="27px"
-                knobColorOn="#FFF"
-                knobColorOff="#FFF"
+                knobColorOn="#FFFFFF"
+                knobColorOff="#FFFFFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
+                trackColorOff="#70737C"
+                trackOpacityOff={0.16}
+                trackOpacityOn= {1}
                 borderColor="#0066FF"
                 borderThickness="0px"
                 opacity={1}
               />
-              <ToggleSwitchForIOS
+              <ToggleSwitch
+                deviceType="IOS"
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
                 knobSizeOn="27px"
                 knobSizeOff="27px"
-                knobColorOff="#FFF"
-                knobColorOn="#FFF"
+                knobColorOff="#FFFFFF"
+                knobColorOn="#FFFFFF"
                 trackColorOff="#70737C29"
                 trackColorOn="#0066FF"
+                trackOpacityOff={0.16}
+                trackOpacityOn= {1}
                 borderColor="#70737C29"
                 borderThickness="0px"
                 opacity={1}
@@ -91,7 +97,8 @@ export default function ToggleSwitchIOS() {
             </div>
             <div className="space-x-4">
               {/* Reduced horizontal space */}
-              <ToggleSwitchForIOS
+              <ToggleSwitch
+                deviceType="IOS"
                 initialChecked={false} // Set initial checked state directly
                 knobSizeOff="27px"
                 knobSizeOn="27px"
@@ -99,12 +106,15 @@ export default function ToggleSwitchIOS() {
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C29"
+                trackOpacityOff={0.16}
+                trackOpacityOn= {1}
                 borderColor="#70737C29"
                 borderThickness="0px"
                 opacity={1}
                 disabled={true}
               />
-              <ToggleSwitchForIOS
+              <ToggleSwitch
+                deviceType="IOS"
                 initialChecked={false} // Set initial checked state directly
                 knobSizeOff="27px"
                 knobSizeOn="27px"
@@ -112,6 +122,8 @@ export default function ToggleSwitchIOS() {
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C29"
+                trackOpacityOff={0.16}
+                trackOpacityOn= {1}
                 borderColor="#70737C29"
                 borderThickness="0px"
                 opacity={0.5}
@@ -120,7 +132,8 @@ export default function ToggleSwitchIOS() {
             </div>
             <div className="space-x-4">
               {/* Reduced horizontal space */}
-              <ToggleSwitchForIOS
+              <ToggleSwitch
+                deviceType="IOS"
                 initialChecked={true} // Set initial checked state directly
                 knobSizeOff="27px"
                 knobSizeOn="27px"
@@ -128,12 +141,15 @@ export default function ToggleSwitchIOS() {
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C29"
+                trackOpacityOff={0.16}
+                trackOpacityOn= {1}
                 borderColor="#70737C29"
                 borderThickness="0px"
                 opacity={1}
                 disabled={true}
               />
-              <ToggleSwitchForIOS
+              <ToggleSwitch
+                deviceType="IOS"
                 initialChecked={true} // Set initial checked state directly
                 knobSizeOff="27px"
                 knobSizeOn="27px"
@@ -141,6 +157,8 @@ export default function ToggleSwitchIOS() {
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C29"
+                trackOpacityOff={0.16}
+                trackOpacityOn= {1}
                 borderColor="#70737C29"
                 borderThickness="0px"
                 opacity={0.5}

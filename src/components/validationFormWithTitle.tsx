@@ -1,23 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleCheck,
-  faCircleXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import ActionButton from "@/components/ui/actionButton"; // Importing ActionButton
 
 // Define the validation schema using Yup
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email address").required("Required"),
-  title: Yup.string().required("Required"),
+  email: Yup.string().email("Invalid email address"),
+  title: Yup.string(),
 });
 
-const ValidationFormWithTitle: React.FC = () => {
+const ValidationFormWithTitle: FC = () => {
   const [isTitleDisabled, setIsTitleDisabled] = useState(false);
   const [showMismatchError, setShowMismatchError] = useState(false);
   const {
@@ -63,21 +60,20 @@ const ValidationFormWithTitle: React.FC = () => {
                 <input
                   {...field}
                   type="email"
-                  className={`shadow appearance-none border rounded w-[328px] h-[48px] py-[12px] px-[16px] focus:outline-none focus:shadow-outline ${
+                  className={`border rounded w-[328px] h-[48px] py-[12px] px-[16px] focus:outline-none focus:shadow-outline ${
                     errors.email ? "border-red-500" : "border-gray-300"
                   }`}
                   style={{
                     fontSize: "16px",
-                    color: "#5A5C63",
-                    borderColor: "#70737C",
-                    opacity: 0.22,
+                    color: "#171719", // Text color with 100% opacity
+                    borderColor: "rgba(112, 115, 124, 0.22)", // Border color with 22% opacity
                     borderRadius: "10px",
                   }}
                 />
               </div>
             )}
           />
-          {errors.email && (
+          {errors.email && errors.email.message && (
             <div className="text-red-500 text-xs mt-2">
               {errors.email.message}
             </div>
@@ -145,7 +141,7 @@ const ValidationFormWithTitle: React.FC = () => {
               </div>
             )}
           />
-          {errors.title && !isTitleDisabled && (
+          {errors.title && errors.title.message && !isTitleDisabled && (
             <div className="text-red-500 text-xs mt-2">
               {errors.title.message}
             </div>

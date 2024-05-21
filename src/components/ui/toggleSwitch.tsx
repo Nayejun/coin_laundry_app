@@ -4,8 +4,9 @@ import { useState } from "react";
 
 import { ToggleSwitchProps } from "@/lib/types";
 
-const ToggleSwitchForAndroid = ({
-  initialChecked = false,
+const ToggleSwitch = ({
+  deviceType,
+  initialChecked,
   onToggle,
   knobSizeOff,
   knobSizeOn,
@@ -43,7 +44,7 @@ const ToggleSwitchForAndroid = ({
       const bigint = parseInt(color.slice(1), 16);
       const r = (bigint >> 16) & 255;
       const g = (bigint >> 8) & 255;
-      const b = (bigint & 255);
+      const b = bigint & 255;
       return `rgba(${r},${g},${b},${opacity})`;
     }
     return color.replace("rgb", "rgba").replace(")", `,${opacity})`);
@@ -54,7 +55,7 @@ const ToggleSwitchForAndroid = ({
       const bigint = parseInt(color.slice(1), 16);
       const r = (bigint >> 16) & 255;
       const g = (bigint >> 8) & 255;
-      const b = (bigint & 255);
+      const b = bigint & 255;
       return `rgba(${r},${g},${b},${opacity})`;
     }
     return color.replace("rgb", "rgba").replace(")", `,${opacity})`);
@@ -63,9 +64,29 @@ const ToggleSwitchForAndroid = ({
   // Dynamic knob size based on isChecked state
   const knobSize = isChecked ? knobSizeOn : knobSizeOff;
 
-  // Calculate the knob margin to center it vertically
-  const knobMargin = isChecked ? `2px` : `6px`;
-  borderColor = isChecked ? "transparent" : "#74757F";
+  // Initialize knobMargin and borderColor
+  let knobMargin = `calc((${trackHeight}px - ${knobSize}) / 2)`;
+  let leftMargin = `calc(${borderThickness} + ${knobMargin}`;
+  let currentBorderColor = borderColor;
+
+  // Update knobMargin and borderColor based on deviceType
+  if (deviceType === "Web") {
+    knobMargin = `calc((${trackHeight}px - ${knobSize}) / 2)`;
+    leftMargin = isChecked
+      ? `calc(${trackWidth}px - ${knobSizeOn} - ${knobMargin})`
+      : `calc(${borderThickness} + ${knobMargin})`;
+    currentBorderColor = "transparent";
+  } else if (deviceType === "Android") {
+    knobMargin = isChecked ? `2px` : `6px`;
+    leftMargin = isChecked ? `22px` : `calc(${borderThickness} + ${knobMargin}`;
+    currentBorderColor = isChecked ? "transparent" : "#74757F";
+  } else if (deviceType === "IOS") {
+    knobMargin = `calc((${trackHeight}px - ${knobSize}) / 2)`;
+    currentBorderColor = "transparent";
+    leftMargin = isChecked
+      ? `calc(${trackWidth}px - ${knobSizeOn} - ${knobMargin})`
+      : `calc(${borderThickness} + ${knobMargin})`;
+  }
 
   return (
     <label
@@ -76,11 +97,11 @@ const ToggleSwitchForAndroid = ({
         height: `${trackHeight}px`, // Track height stays the same
         borderRadius: `${trackHeight / 2}px`, // Half the height to create a perfect oval shape
         backgroundColor: isChecked
-          ? rgbaColor(trackColorOn ?? '', trackOpacityOn ?? 0)
-          : rgbaColor(trackColorOff ?? '', trackOpacityOff ?? 0),
-        border: `${borderThickness} solid ${rgbaBorderColor(
-          borderColor,
-          borderOpacity ?? 1 // Provide a default value of 1 for borderOpacity
+          ? rgbaColor(trackColorOn || "", trackOpacityOn || 0)
+          : rgbaColor(trackColorOff || "", trackOpacityOff || 0),
+        border: `${borderThickness} solid ${rgbaColor(
+          currentBorderColor || "",
+          borderOpacity || 0
         )}`,
         transition: "background-color 0.2s, border-color 0.2s",
         cursor: disabled ? "not-allowed" : "pointer",
@@ -100,11 +121,8 @@ const ToggleSwitchForAndroid = ({
         style={{
           position: "absolute",
           top: knobMargin, // Center the knob vertically
-          left: isChecked
-            ? `22px`
-            : `calc(${borderThickness} + ${knobMargin})`, // Position right or left
-          transition:
-            "left 0.2s, top 0.2s, width 0.2s, height 0.2s, background-color 0.2s",
+          left: leftMargin, // Position right or left
+          transition: "left 0.2s",
           width: knobSize,
           height: knobSize,
           borderRadius: "50%",
@@ -118,4 +136,4 @@ const ToggleSwitchForAndroid = ({
   );
 };
 
-export default ToggleSwitchForAndroid;
+export default ToggleSwitch;

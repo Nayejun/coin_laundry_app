@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ToggleSwitchForWeb from "@/components/ui/toggleSwitchForWeb";
+import ToggleSwitch from "@/components/ui/toggleSwitch";
 
 export default function ToggleSwitchWeb() {
   const [isActive, setIsActive] = useState(true); // Set initial state to true
@@ -41,7 +41,8 @@ export default function ToggleSwitchWeb() {
               </span>
             </div>
             <div className="space-x-4">
-              <ToggleSwitchForWeb
+              <ToggleSwitch
+                deviceType="Web"
                 initialChecked={false}
                 onToggle={handleActiveToggle}
                 knobSizeOn="24px"
@@ -57,7 +58,8 @@ export default function ToggleSwitchWeb() {
                 opacity={1}
                 borderOpacity={1}
               />
-              <ToggleSwitchForWeb
+              <ToggleSwitch
+                deviceType="Web"
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
                 knobSizeOn="24px"
@@ -96,63 +98,79 @@ export default function ToggleSwitchWeb() {
             </div>
             <div className="space-x-4">
               {/* Reduced horizontal space */}
-              <ToggleSwitchForWeb
-                initialChecked={false} // Set initial checked state directly
-                knobSizeOff="24px"
+              <ToggleSwitch
+                deviceType="Web"
+                initialChecked={false}
+                onToggle={handleActiveToggle}
                 knobSizeOn="24px"
+                knobSizeOff="24px"
+                knobColorOff="#FFFFFF"
+                knobColorOn="#FFFFFF"
+                trackColorOff="#70737C"
+                trackColorOn="#0066FF"
+                trackOpacityOff={0.16}
+                trackOpacityOn={1}
+                borderColor="#70737C"
+                borderThickness="0px"
+                opacity={1}
+                borderOpacity={1}
+                disabled={true}
+              />
+              <ToggleSwitch
+                deviceType="Web"
+                initialChecked={false}
+                onToggle={handleActiveToggle}
+                knobSizeOn="24px"
+                knobSizeOff="24px"
+                knobColorOff="#FFFFFF"
+                knobColorOn="#FFFFFF"
+                trackColorOff="#70737C"
+                trackColorOn="#0066FF"
+                trackOpacityOff={0.08}
+                trackOpacityOn={1}
+                borderColor="#70737C"
+                borderThickness="0px"
+                opacity={1}
+                borderOpacity={1}
+                disabled={true}
+              />
+            </div>
+            <div className="space-x-4">
+              {/* Reduced horizontal space */}
+              <ToggleSwitch
+                deviceType="Web"
+                initialChecked={true}
+                onToggle={handleActiveToggle}
+                knobSizeOn="24px"
+                knobSizeOff="24px"
                 knobColorOn="#FFF"
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C"
                 trackOpacityOff={0.16}
                 trackOpacityOn={1}
-                borderColor="#70737C"
+                borderColor="#0066FF"
                 borderThickness="0px"
                 opacity={1}
+                borderOpacity={1}
                 disabled={true}
               />
-              <ToggleSwitchForWeb
-                initialChecked={false} // Set initial checked state directly
-                knobSizeOff="24px"
+              <ToggleSwitch
+                deviceType="Web"
+                initialChecked={true}
+                onToggle={handleActiveToggle}
                 knobSizeOn="24px"
+                knobSizeOff="24px"
                 knobColorOn="#FFF"
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
                 trackColorOff="#70737C"
-                trackOpacityOff={0.08}
-                trackOpacityOn={1}
-                borderColor="#70737C"
+                trackOpacityOff={0.16}
+                trackOpacityOn={0.43}
+                borderColor="#0066FF"
                 borderThickness="0px"
                 opacity={1}
-                disabled={true}
-              />
-            </div>
-            <div className="space-x-4">
-              {/* Reduced horizontal space */}
-              <ToggleSwitchForWeb
-                initialChecked={true} // Set initial checked state directly
-                knobSizeOff="24px"
-                knobSizeOn="24px"
-                knobColorOn="#FFF"
-                knobColorOff="#FFF"
-                trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
-                borderColor="#70737C29"
-                borderThickness="0px"
-                opacity={1}
-                disabled={true}
-              />
-              <ToggleSwitchForWeb
-                initialChecked={true} // Set initial checked state directly
-                knobSizeOff="24px"
-                knobSizeOn="24px"
-                knobColorOn="#FFF"
-                knobColorOff="#FFF"
-                trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
-                borderColor="#70737C29"
-                borderThickness="0px"
-                opacity={0.5}
+                borderOpacity={1}
                 disabled={true}
               />
             </div>

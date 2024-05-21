@@ -1,4 +1,5 @@
 export type ToggleSwitchProps = {
+  deviceType?: "Web" | "Android" | "IOS";
   initialChecked?: boolean;
   onToggle?: (checked: boolean) => void;
   knobSizeOff?: string;

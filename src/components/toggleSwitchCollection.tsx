@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ToggleSwitchForWeb from "./ui/toggleSwitchForWeb";
-import ToggleSwitchForAndroid from "./ui/toggleSwitchForAndroid";
-import ToggleSwitchForIOS from "./ui/toggleSwitchForIOS";
+import ToggleSwitch from "./ui/toggleSwitch";
 
 export default function ToggleSwitchCollection() {
   const [isActive, setIsActive] = useState(true);
@@ -69,7 +67,8 @@ export default function ToggleSwitchCollection() {
           zIndex: 2,
         }}
       >
-        <ToggleSwitchForWeb
+        <ToggleSwitch
+          deviceType="Web"
           initialChecked={false}
           onToggle={handleActiveToggle}
           knobSizeOn="24px"
@@ -85,7 +84,8 @@ export default function ToggleSwitchCollection() {
           opacity={1}
           borderOpacity={1}
         />
-        <ToggleSwitchForWeb
+        <ToggleSwitch
+          deviceType="Web"
           initialChecked={isActive}
           onToggle={handleActiveToggle}
           knobSizeOn="24px"
@@ -101,7 +101,8 @@ export default function ToggleSwitchCollection() {
           opacity={1}
           borderOpacity={1}
         />
-        <ToggleSwitchForWeb
+        <ToggleSwitch
+          deviceType="Web"
           initialChecked={false} // Set initial checked state directly
           knobSizeOff="24px"
           knobSizeOn="24px"
@@ -116,20 +117,27 @@ export default function ToggleSwitchCollection() {
           opacity={1}
           disabled={true}
         />
-        <ToggleSwitchForWeb
-          initialChecked={true} // Set initial checked state directly
-          knobSizeOff="24px"
+        <ToggleSwitch
+          deviceType="Web"
+          initialChecked={isActive}
+          onToggle={handleActiveToggle}
           knobSizeOn="24px"
-          knobColorOn="#FFFFFF"
+          knobSizeOff="24px"
           knobColorOff="#FFFFFF"
+          knobColorOn="#FFFFFF"
+          trackColorOff="#70737C"
           trackColorOn="#0066FF"
-          trackColorOff="#70737C29"
-          borderColor="#70737C29"
+          trackOpacityOff={0.16}
+          trackOpacityOn={0.43}
+          borderColor="#70737C"
           borderThickness="0px"
-          opacity={0.5}
+          opacity={1}
+          borderOpacity={1}
           disabled={true}
         />
-        <ToggleSwitchForAndroid
+
+        <ToggleSwitch
+          deviceType="Android"
           initialChecked={false}
           onToggle={handleActiveToggle}
           knobSizeOff="16px"
@@ -147,7 +155,8 @@ export default function ToggleSwitchCollection() {
           opacity={1}
           borderOpacity={1}
         />
-        <ToggleSwitchForAndroid
+        <ToggleSwitch
+          deviceType="Android"
           initialChecked={isActive}
           onToggle={handleActiveToggle}
           knobSizeOff="16px"
@@ -165,7 +174,8 @@ export default function ToggleSwitchCollection() {
           opacity={1}
           borderOpacity={1}
         />
-        <ToggleSwitchForAndroid
+        <ToggleSwitch
+          deviceType="Android"
           initialChecked={false}
           onToggle={handleActiveToggle}
           knobSizeOff="16px"
@@ -184,7 +194,8 @@ export default function ToggleSwitchCollection() {
           opacity={0.38}
           disabled={true}
         />
-        <ToggleSwitchForAndroid
+        <ToggleSwitch
+          deviceType="Android"
           initialChecked={isActive}
           onToggle={handleActiveToggle}
           knobSizeOff="16px"
@@ -203,34 +214,40 @@ export default function ToggleSwitchCollection() {
           opacity={1}
           disabled={true}
         />
-        <ToggleSwitchForIOS
+        <ToggleSwitch
+          deviceType="IOS"
           initialChecked={false}
           onToggle={handleActiveToggle}
           knobSizeOn="27px"
           knobSizeOff="27px"
-          knobColorOn="#FFF"
-          knobColorOff="#787880"
+          knobColorOn="#FFFFFF"
+          knobColorOff="#FFFFFF"
           trackColorOn="#0066FF"
-          trackColorOff="#70737C29"
+          trackColorOff="#70737C"
+          trackOpacityOff={0.16}
+          trackOpacityOn={1}
           borderColor="#0066FF"
           borderThickness="0px"
-          opacity={1}
         />
-        <ToggleSwitchForIOS
+        <ToggleSwitch
+          deviceType="IOS"
           initialChecked={isActive}
           onToggle={handleActiveToggle}
           knobSizeOn="27px"
           knobSizeOff="27px"
-          knobColorOff="#FFF"
-          knobColorOn="#FFF"
+          knobColorOff="#FFFFFF"
+          knobColorOn="#FFFFFF"
           trackColorOff="#70737C29"
           trackColorOn="#0066FF"
+          trackOpacityOff={0.16}
+          trackOpacityOn={1}
           borderColor="#70737C29"
           borderThickness="0px"
           opacity={1}
           borderOpacity={1}
         />
-        <ToggleSwitchForIOS
+        <ToggleSwitch
+          deviceType="IOS"
           initialChecked={false} // Set initial checked state directly
           knobSizeOff="27px"
           knobSizeOn="27px"
@@ -238,12 +255,14 @@ export default function ToggleSwitchCollection() {
           knobColorOff="#FFF"
           trackColorOn="#0066FF"
           trackColorOff="#70737C29"
+          trackOpacityOff={0.16}
+          trackOpacityOn={1}
           borderColor="#70737C29"
-          borderThickness="0px"
           opacity={0.5}
           disabled={true}
         />
-        <ToggleSwitchForIOS
+        <ToggleSwitch
+          deviceType="IOS"
           initialChecked={true} // Set initial checked state directly
           knobSizeOff="27px"
           knobSizeOn="27px"
@@ -251,8 +270,9 @@ export default function ToggleSwitchCollection() {
           knobColorOff="#FFF"
           trackColorOn="#0066FF"
           trackColorOff="#70737C29"
+          trackOpacityOff={0.16}
+          trackOpacityOn={1}
           borderColor="#70737C29"
-          borderThickness="0px"
           opacity={0.5}
           disabled={true}
         />
