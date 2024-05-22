@@ -21,9 +21,9 @@ const ToggleSwitch = ({
   trackOpacityOff,
   trackOpacityOn,
   borderColor,
-  borderThickness,
-  borderOpacity, // Default to fully opaque
-  opacity,
+  borderThickness = "0px", // Default to 0px if not provided
+  borderOpacity = 1, // Default to fully opaque
+  opacity = 1,
   disabled,
 }: ToggleSwitchProps) => {
   const [isChecked, setIsChecked] = useState(initialChecked);
@@ -66,7 +66,7 @@ const ToggleSwitch = ({
 
   // Initialize knobMargin and borderColor
   let knobMargin = `calc((${trackHeight}px - ${knobSize}) / 2)`;
-  let leftMargin = `calc(${borderThickness} + ${knobMargin}`;
+  let leftMargin = `calc(${borderThickness} + ${knobMargin})`;
   let currentBorderColor = borderColor;
 
   // Update knobMargin and borderColor based on deviceType
@@ -78,7 +78,7 @@ const ToggleSwitch = ({
     currentBorderColor = "transparent";
   } else if (deviceType === "Android") {
     knobMargin = isChecked ? `2px` : `6px`;
-    leftMargin = isChecked ? `22px` : `calc(${borderThickness} + ${knobMargin}`;
+    leftMargin = isChecked ? `22px` : `calc(${borderThickness} + ${knobMargin})`;
     currentBorderColor = isChecked ? "transparent" : "#74757F";
   } else if (deviceType === "IOS") {
     knobMargin = `calc((${trackHeight}px - ${knobSize}) / 2)`;

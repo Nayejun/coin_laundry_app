@@ -1,16 +1,6 @@
 import React from 'react';
 
-type CTAButtonProps = {
-  buttonWidth: string;
-  buttonHeight: string;
-  buttonColor: string;
-  borderColor: string;
-  borderThickness: string;
-  buttonText: string;
-  buttonTextSize: string;
-  buttonTextColor: string;
-  disabled?: boolean;
-};
+import { CTAButtonProps } from '@/lib/types';
 
 const CTAButton: React.FC<CTAButtonProps> = ({
   buttonWidth,

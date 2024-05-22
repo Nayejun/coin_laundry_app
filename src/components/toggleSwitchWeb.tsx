@@ -14,7 +14,7 @@ export default function ToggleSwitchWeb() {
   };
 
   return (
-    <div className="p-5 bg-background-light min-h-full flex">
+    <div className="p-5 px-6 bg-background-light min-h-full flex">
       <div className="bg-white rounded-3xl px-5 py-5 space-y-8">
         {/* Reduced padding and space-y */}
         <h1 className="text-lg font-bold mb-2">Web</h1>
@@ -53,9 +53,6 @@ export default function ToggleSwitchWeb() {
                 trackColorOff="#70737C"
                 trackOpacityOff={0.16}
                 trackOpacityOn={1}
-                borderColor="#0066FF"
-                borderThickness="0px"
-                opacity={1}
                 borderOpacity={1}
               />
               <ToggleSwitch
@@ -70,9 +67,6 @@ export default function ToggleSwitchWeb() {
                 trackColorOn="#0066FF"
                 trackOpacityOff={0.16}
                 trackOpacityOn={1}
-                borderColor="#70737C"
-                borderThickness="0px"
-                opacity={1}
                 borderOpacity={1}
               />
             </div>
@@ -110,10 +104,6 @@ export default function ToggleSwitchWeb() {
                 trackColorOn="#0066FF"
                 trackOpacityOff={0.16}
                 trackOpacityOn={1}
-                borderColor="#70737C"
-                borderThickness="0px"
-                opacity={1}
-                borderOpacity={1}
                 disabled={true}
               />
               <ToggleSwitch
@@ -129,9 +119,6 @@ export default function ToggleSwitchWeb() {
                 trackOpacityOff={0.08}
                 trackOpacityOn={1}
                 borderColor="#70737C"
-                borderThickness="0px"
-                opacity={1}
-                borderOpacity={1}
                 disabled={true}
               />
             </div>
@@ -149,10 +136,6 @@ export default function ToggleSwitchWeb() {
                 trackColorOff="#70737C"
                 trackOpacityOff={0.16}
                 trackOpacityOn={1}
-                borderColor="#0066FF"
-                borderThickness="0px"
-                opacity={1}
-                borderOpacity={1}
                 disabled={true}
               />
               <ToggleSwitch
@@ -167,10 +150,6 @@ export default function ToggleSwitchWeb() {
                 trackColorOff="#70737C"
                 trackOpacityOff={0.16}
                 trackOpacityOn={0.43}
-                borderColor="#0066FF"
-                borderThickness="0px"
-                opacity={1}
-                borderOpacity={1}
                 disabled={true}
               />
             </div>

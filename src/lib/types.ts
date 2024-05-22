@@ -30,3 +30,23 @@ export type RatingStarsProps = {
   defaultValue: number;
   onChange: (value: number) => void;
 };
+
+export type CTAButtonProps = {
+  buttonWidth: string;
+  buttonHeight: string;
+  buttonColor: string;
+  borderColor: string;
+  borderThickness: string;
+  buttonText: string;
+  buttonTextSize: string;
+  buttonTextColor: string;
+  disabled?: boolean;
+};
+
+export type DividerProps = {
+  color?: string;
+  thickness?: string;
+  vertical?: boolean;
+  length?: string;
+  margin?: string;
+}

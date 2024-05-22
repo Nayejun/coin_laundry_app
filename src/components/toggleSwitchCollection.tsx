@@ -237,11 +237,11 @@ export default function ToggleSwitchCollection() {
           knobSizeOff="27px"
           knobColorOff="#FFFFFF"
           knobColorOn="#FFFFFF"
-          trackColorOff="#70737C29"
+          trackColorOff="#70737C"
           trackColorOn="#0066FF"
           trackOpacityOff={0.16}
           trackOpacityOn={1}
-          borderColor="#70737C29"
+          borderColor="#70737C"
           borderThickness="0px"
           opacity={1}
           borderOpacity={1}
@@ -251,14 +251,12 @@ export default function ToggleSwitchCollection() {
           initialChecked={false} // Set initial checked state directly
           knobSizeOff="27px"
           knobSizeOn="27px"
-          knobColorOn="#FFFFFF"
+          knobColorOn="#FFF"
           knobColorOff="#FFF"
           trackColorOn="#0066FF"
-          trackColorOff="#70737C29"
-          trackOpacityOff={0.16}
+          trackColorOff="#70737C"
+          trackOpacityOff={0.08}
           trackOpacityOn={1}
-          borderColor="#70737C29"
-          opacity={0.5}
           disabled={true}
         />
         <ToggleSwitch

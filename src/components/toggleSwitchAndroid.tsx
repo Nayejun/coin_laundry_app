@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import ToggleSwitchForAndroid from "@/components/ui/toggleSwitch"; // Update this import path if necessary
+import ToggleSwitch from "@/components/ui/toggleSwitch"; // Update this import path if necessary
 
 export default function ToggleSwitchAndroid() {
   const [isActive, setIsActive] = useState(true); // Set initial state to true
@@ -14,7 +14,7 @@ export default function ToggleSwitchAndroid() {
   };
 
   return (
-    <div className="p-5 bg-background-light min-h-full flex">
+    <div className="p-5 px-6 bg-background-light min-h-full flex">
       <div className="bg-white rounded-3xl px-5 py-5 space-y-8">
         <h1 className="text-lg font-bold mb-2">Android</h1>
         <div className="space-y-8">
@@ -39,7 +39,7 @@ export default function ToggleSwitchAndroid() {
               </span>
             </div>
             <div className="space-x-4">
-              <ToggleSwitchForAndroid
+              <ToggleSwitch
                 deviceType="Android"
                 initialChecked={false}
                 onToggle={handleActiveToggle}
@@ -58,7 +58,7 @@ export default function ToggleSwitchAndroid() {
                 opacity={1}
                 borderOpacity={1}
               />
-              <ToggleSwitchForAndroid
+              <ToggleSwitch
                 deviceType="Android"
                 initialChecked={true}
                 onToggle={handleActiveToggle}
@@ -98,7 +98,7 @@ export default function ToggleSwitchAndroid() {
               </span>
             </div>
             <div className="space-x-4">
-              <ToggleSwitchForAndroid
+              <ToggleSwitch
                 deviceType="Android"
                 initialChecked={false}
                 onToggle={handleActiveToggle}
@@ -118,7 +118,7 @@ export default function ToggleSwitchAndroid() {
                 borderOpacity={1}
                 disabled={true}
               />
-              <ToggleSwitchForAndroid
+              <ToggleSwitch
                 deviceType="Android"
                 initialChecked={false}
                 onToggle={handleActiveToggle}
@@ -140,7 +140,7 @@ export default function ToggleSwitchAndroid() {
               />
             </div>
             <div className="space-x-4">
-              <ToggleSwitchForAndroid
+              <ToggleSwitch
                 deviceType="Android"
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}
@@ -160,7 +160,7 @@ export default function ToggleSwitchAndroid() {
                 opacity={1}
                 disabled={true}
               />
-              <ToggleSwitchForAndroid
+              <ToggleSwitch
                 deviceType="Android"
                 initialChecked={isActive}
                 onToggle={handleActiveToggle}

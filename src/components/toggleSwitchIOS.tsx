@@ -14,7 +14,7 @@ export default function ToggleSwitchIOS() {
   };
 
   return (
-    <div className="p-5 bg-background-light min-h-full flex">
+    <div className="p-5 px-6 bg-background-light min-h-full flex">
       <div className="bg-white rounded-3xl px-5 py-5 space-y-8">
         {/* Reduced padding and space-y */}
         <h1 className="text-lg font-bold mb-2">iOS</h1>
@@ -53,9 +53,6 @@ export default function ToggleSwitchIOS() {
                 trackColorOff="#70737C"
                 trackOpacityOff={0.16}
                 trackOpacityOn= {1}
-                borderColor="#0066FF"
-                borderThickness="0px"
-                opacity={1}
               />
               <ToggleSwitch
                 deviceType="IOS"
@@ -68,11 +65,7 @@ export default function ToggleSwitchIOS() {
                 trackColorOff="#70737C29"
                 trackColorOn="#0066FF"
                 trackOpacityOff={0.16}
-                trackOpacityOn= {1}
-                borderColor="#70737C29"
-                borderThickness="0px"
-                opacity={1}
-                borderOpacity={1}
+                trackOpacityOn= {1}      
               />
             </div>
           </div>
@@ -105,12 +98,9 @@ export default function ToggleSwitchIOS() {
                 knobColorOn="#FFF"
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
+                trackColorOff="#70737C"
                 trackOpacityOff={0.16}
                 trackOpacityOn= {1}
-                borderColor="#70737C29"
-                borderThickness="0px"
-                opacity={1}
                 disabled={true}
               />
               <ToggleSwitch
@@ -121,12 +111,9 @@ export default function ToggleSwitchIOS() {
                 knobColorOn="#FFF"
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
-                trackOpacityOff={0.16}
+                trackColorOff="#70737C"
+                trackOpacityOff={0.08}
                 trackOpacityOn= {1}
-                borderColor="#70737C29"
-                borderThickness="0px"
-                opacity={0.5}
                 disabled={true}
               />
             </div>
@@ -143,9 +130,6 @@ export default function ToggleSwitchIOS() {
                 trackColorOff="#70737C29"
                 trackOpacityOff={0.16}
                 trackOpacityOn= {1}
-                borderColor="#70737C29"
-                borderThickness="0px"
-                opacity={1}
                 disabled={true}
               />
               <ToggleSwitch
@@ -156,12 +140,9 @@ export default function ToggleSwitchIOS() {
                 knobColorOn="#FFF"
                 knobColorOff="#FFF"
                 trackColorOn="#0066FF"
-                trackColorOff="#70737C29"
+                trackColorOff="#70737C"
                 trackOpacityOff={0.16}
-                trackOpacityOn= {1}
-                borderColor="#70737C29"
-                borderThickness="0px"
-                opacity={0.5}
+                trackOpacityOn= {0.5}
                 disabled={true}
               />
             </div>
