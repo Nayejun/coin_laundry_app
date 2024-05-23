@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -10,14 +10,16 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import ActionButton from "@/components/ui/actionButton"; // Importing ActionButton
-
+import { ValidationFormWithTitleProps } from "@/lib/types";
 // Define the validation schema using Yup
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email address").required(),
-  title: Yup.string().required(),
+  email: Yup.string().email("Invalid email address"),
+  title: Yup.string(),
 });
 
-const ValidationForm: React.FC = () => {
+const ValidationFormWithTitle: FC<ValidationFormWithTitleProps> = ({
+  hasTitle,
+}) => {
   const [isTitleDisabled, setIsTitleDisabled] = useState(false);
   const [showMismatchError, setShowMismatchError] = useState(false);
   const {
@@ -47,6 +49,15 @@ const ValidationForm: React.FC = () => {
         className="w-full max-w-lg bg-white p-8 rounded-lg space-y-4"
       >
         <div className="relative">
+          {hasTitle && (
+            <label
+              htmlFor="email"
+              className="block text-gray-700 font-bold mb-2"
+              style={{ fontSize: "14px" }}
+            >
+              이메일
+            </label>
+          )}
           <Controller
             name="email"
             control={control}
@@ -57,9 +68,7 @@ const ValidationForm: React.FC = () => {
                   {...field}
                   type="email"
                   className={`border rounded w-[328px] h-[48px] py-[12px] px-[16px] focus:outline-none focus:shadow-outline ${
-                    errors.email && errors.email.type !== "required"
-                      ? "border-red-500"
-                      : "border-gray-300"
+                    errors.email ? "border-red-500" : "border-gray-300"
                   }`}
                   style={{
                     fontSize: "16px",
@@ -71,7 +80,7 @@ const ValidationForm: React.FC = () => {
               </div>
             )}
           />
-          {errors.email && errors.email.type !== "required" && (
+          {errors.email && errors.email.message && (
             <div className="text-red-500 text-xs mt-2">
               {errors.email.message}
             </div>
@@ -79,6 +88,15 @@ const ValidationForm: React.FC = () => {
         </div>
 
         <div className="relative">
+          {hasTitle && (
+            <label
+              htmlFor="title"
+              className="block text-gray-700 font-bold mb-2"
+              style={{ fontSize: "14px" }}
+            >
+              Title
+            </label>
+          )}
           <Controller
             name="title"
             control={control}
@@ -92,7 +110,7 @@ const ValidationForm: React.FC = () => {
                   className={`shadow appearance-none rounded w-[328px] h-[48px] py-[12px] px-[16px] focus:outline-none focus:shadow-outline ${
                     isTitleDisabled
                       ? "bg-[#F8F8FA] text-[#171719] border-none cursor-not-allowed"
-                      : errors.title && errors.title.type !== "required"
+                      : errors.title
                       ? "border-red-500"
                       : getValues("title") === getValues("email")
                       ? "border-green-500"
@@ -132,13 +150,11 @@ const ValidationForm: React.FC = () => {
               </div>
             )}
           />
-          {errors.title &&
-            errors.title.type !== "required" &&
-            !isTitleDisabled && (
-              <div className="text-red-500 text-xs mt-2">
-                {errors.title.message}
-              </div>
-            )}
+          {errors.title && errors.title.message && !isTitleDisabled && (
+            <div className="text-red-500 text-xs mt-2">
+              {errors.title.message}
+            </div>
+          )}
           {showMismatchError && (
             <div
               className="text-red-500 text-xs mt-2"
@@ -157,4 +173,4 @@ const ValidationForm: React.FC = () => {
   );
 };
 
-export default ValidationForm;
+export default ValidationFormWithTitle;

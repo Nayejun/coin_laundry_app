@@ -21,6 +21,12 @@ const config: Config = {
         'hover-primary': '#00A5A1',
         'active-primary': '#008781',
       },
+      borderRadius: {
+        'sm': '4px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '20px',
+      },
       opacity: {
         '16': '0.16',
       },
@@ -37,72 +43,72 @@ const config: Config = {
   plugins: [
     function({addUtilities}: { addUtilities: any }) {
       const newUtilities = {
-        '.title1': {
+        '.title-1': {
           fontSize: '24px',
           lineHeight: '32px',
           fontWeight: '700',
         },
-        '.heading1': {
+        '.heading-1': {
           fontSize: '22px',
           lineHeight: '30px',
           fontWeight: '600',
         },
-        '.heading2': {
+        '.heading-2': {
           fontSize: '20px',
           lineHeight: '28px',
           fontWeight: '600',
         },
-        '.headline1': {
+        '.headline-1': {
           fontSize: '18px',
           lineHeight: '26px',
           fontWeight: '600',
         },
-        '.headline2': {
+        '.headline-2': {
           fontSize: '17px',
           lineHeight: '24px',
           fontWeight: '600',
         },
-        '.body1_normal': {
+        '.body-1_normal': {
           fontSize: '16px',
           lineHeight: '24px',
           fontWeight: '400',
         },
-        '.body1_reading': {
+        '.body-1_reading': {
           fontSize: '16px',
           lineHeight: '26px',
           fontWeight: '400',
         },
-        '.body2_normal': {
+        '.body-2_normal': {
           fontSize: '15px',
           lineHeight: '22px',
           fontWeight: '400',
         },
-        '.body2_reading': {
+        '.body-2_reading': {
           fontSize: '15px',
           lineHeight: '24px',
           fontWeight: '400',
         },
-        '.label1_normal': {
+        '.label-1_normal': {
           fontSize: '14px',
           lineHeight: '20px',
           fontWeight: '600',
         },
-        '.label1_reading': {
+        '.label-1_reading': {
           fontSize: '14px',
           lineHeight: '22px',
           fontWeight: '600',
         },
-        '.label2': {
+        '.label-2': {
           fontSize: '13px',
           lineHeight: '18px',
           fontWeight: '400',
         },
-        '.caption1': {
+        '.caption-1': {
           fontSize: '12px',
           lineHeight: '16px',
           fontWeight: '400',
         },
-        '.caption2': {
+        '.caption-2': {
           fontSize: '11px',
           lineHeight: '14px',
           fontWeight: '400',

@@ -24,7 +24,7 @@ const ToggleSwitch = ({
   borderThickness = "0px", // Default to 0px if not provided
   borderOpacity = 1, // Default to fully opaque
   opacity = 1,
-  disabled,
+  disabled = false,
 }: ToggleSwitchProps) => {
   const [isChecked, setIsChecked] = useState(initialChecked);
 

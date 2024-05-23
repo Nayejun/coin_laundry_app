@@ -2,14 +2,16 @@ import React from 'react';
 
 import { CTAButtonProps } from '@/lib/types';
 
-const CTAButton: React.FC<CTAButtonProps> = ({
-  buttonWidth,
-  buttonHeight,
+const CTAButtonSmall: React.FC<CTAButtonProps> = ({
+  buttonWidth = "140px",
+  buttonHeight = "52px",
   buttonColor,
   borderColor,
   borderThickness,
+  borderRadius = "8px",
   buttonText,
-  buttonTextSize,
+  buttonTextSize = "16px",
+  buttonTextWeight = 600,
   buttonTextColor,
   disabled = false,
 }) => {
@@ -19,14 +21,18 @@ const CTAButton: React.FC<CTAButtonProps> = ({
     backgroundColor: buttonColor,
     borderColor: borderColor,
     borderWidth: borderThickness,
-    color: buttonTextColor,
+    borderRadius: borderRadius,
+    text: buttonText,
     fontSize: buttonTextSize,
+    fontWeight: buttonTextWeight,
+    color: buttonTextColor,
+    disabled: disabled,
   };
 
   return (
     <button
-      className={`flex justify-center items-center font-bold rounded transition-colors duration-300 ${
-        disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
+      className={`flex justify-center items-center font-semibold rounded-md transition-colors duration-300 ${
+        disabled ? 'cursor-not-allowed' : 'cursor-pointer'
       }`}
       style={buttonStyles}
       disabled={disabled}
@@ -36,4 +42,4 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   );
 };
 
-export default CTAButton;
+export default CTAButtonSmall;

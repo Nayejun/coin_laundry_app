@@ -26,20 +26,26 @@ export type ActionButtonProps = {
   onClick: () => void;
 };
 
+export type ValidationFormWithTitleProps = {
+  hasTitle: boolean;
+};
+
 export type RatingStarsProps = {
   defaultValue: number;
   onChange: (value: number) => void;
 };
 
 export type CTAButtonProps = {
-  buttonWidth: string;
-  buttonHeight: string;
-  buttonColor: string;
-  borderColor: string;
-  borderThickness: string;
-  buttonText: string;
-  buttonTextSize: string;
-  buttonTextColor: string;
+  buttonWidth?: string;
+  buttonHeight?: string;
+  buttonColor?: string;
+  borderColor?: string;
+  borderThickness?: string;
+  borderRadius?: string;
+  buttonText?: string;
+  buttonTextSize?: string;
+  buttonTextColor?: string;
+  buttonTextWeight?: number;
   disabled?: boolean;
 };
 
@@ -50,3 +56,10 @@ export type DividerProps = {
   length?: string;
   margin?: string;
 }
+
+export type RadiusBoxProps = {
+  boxWidth: string;
+  boxHeight: string;
+  borderThickness?: string;
+  additionalClasses?: string;
+};
