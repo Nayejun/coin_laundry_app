@@ -17,17 +17,106 @@ const config: Config = {
       colors: {
         'custom-gray': '#70737C',
         'background-light': '#F7F7F8', // Custom background color
+        'primary': '#13C2C2',
+        'hover-primary': '#00A5A1',
+        'active-primary': '#008781',
       },
-      
+      borderRadius: {
+        'sm': '4px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '20px',
+      },
       opacity: {
         '16': '0.16',
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['active'],
+      fontFamily: {
+        pretendard: ['var(--font-pretendard)'],
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    function({addUtilities}: { addUtilities: any }) {
+      const newUtilities = {
+        '.title-1': {
+          fontSize: '24px',
+          lineHeight: '32px',
+          fontWeight: '700',
+        },
+        '.heading-1': {
+          fontSize: '22px',
+          lineHeight: '30px',
+          fontWeight: '600',
+        },
+        '.heading-2': {
+          fontSize: '20px',
+          lineHeight: '28px',
+          fontWeight: '600',
+        },
+        '.headline-1': {
+          fontSize: '18px',
+          lineHeight: '26px',
+          fontWeight: '600',
+        },
+        '.headline-2': {
+          fontSize: '17px',
+          lineHeight: '24px',
+          fontWeight: '600',
+        },
+        '.body-1_normal': {
+          fontSize: '16px',
+          lineHeight: '24px',
+          fontWeight: '400',
+        },
+        '.body-1_reading': {
+          fontSize: '16px',
+          lineHeight: '26px',
+          fontWeight: '400',
+        },
+        '.body-2_normal': {
+          fontSize: '15px',
+          lineHeight: '22px',
+          fontWeight: '400',
+        },
+        '.body-2_reading': {
+          fontSize: '15px',
+          lineHeight: '24px',
+          fontWeight: '400',
+        },
+        '.label-1_normal': {
+          fontSize: '14px',
+          lineHeight: '20px',
+          fontWeight: '600',
+        },
+        '.label-1_reading': {
+          fontSize: '14px',
+          lineHeight: '22px',
+          fontWeight: '600',
+        },
+        '.label-2': {
+          fontSize: '13px',
+          lineHeight: '18px',
+          fontWeight: '400',
+        },
+        '.caption-1': {
+          fontSize: '12px',
+          lineHeight: '16px',
+          fontWeight: '400',
+        },
+        '.caption-2': {
+          fontSize: '11px',
+          lineHeight: '14px',
+          fontWeight: '400',
+        },
+      };
+      addUtilities(newUtilities)
+    }
+  ],
 };
 
 export default config;

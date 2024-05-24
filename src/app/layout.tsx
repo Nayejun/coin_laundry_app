@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "@/styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const pretendard = localFont({
+  src: "../fonts/PretendardVariable.woff2",
+  display: "swap",
+  weight: "45 920",
+  variable: "--font-pretendard",
+});
 
 export const metadata: Metadata = {
   title: "Laundry App",
@@ -16,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen`}>
-        
-        {children}
-        
-        </body>
+      <body className={`${pretendard.className} min-h-screen`}>{children}</body>
     </html>
   );
 }
