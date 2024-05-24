@@ -19,13 +19,13 @@ const Page: FC = () => {
 			<div className="mx-[10px] mt-[2px] text-semibold font-[600]">Strong</div>
 			<div className="mx-[10px] mt-[2px] text-gray-300 font-normal ">Button_Hover</div>
 			<div className="mx-[10px] mb-[10px]">
-				<button className={`w-[328px] h-[48px] rounded-[10px] py-[12px] px-[28px] justify-center items-center transition-colors duration-300 text-white bg-hover-primary`}>행동</button>
+				<button className={`w-[328px] h-[48px] rounded-[10px] py-[12px] px-[28px] justify-center items-center transition-colors duration-300 text-white bg-primary-strong`}>행동</button>
 			</div>
 
 			<div className="mx-[10px] mt-[2px] text-semibold font-[600]">Heavy</div>
 			<div className="mx-[10px] mt-[2px] text-gray-300 font-normal ">Button_Press</div>
 			<div className="mx-[10px] mb-[10px]">
-				<button className={`w-[328px] h-[48px] rounded-[10px] py-[12px] px-[28px] justify-center items-center transition-colors duration-300 text-white bg-active-primary`}>행동</button>
+				<button className={`w-[328px] h-[48px] rounded-[10px] py-[12px] px-[28px] justify-center items-center transition-colors duration-300 text-white bg-primary-heavy`}>행동</button>
 			</div>
 		</>
 	);
