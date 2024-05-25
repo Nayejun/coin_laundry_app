@@ -63,3 +63,9 @@ export type RadiusBoxProps = {
   borderThickness?: string;
   additionalClasses?: string;
 };
+
+export type BasicDividerProps = {
+  variant: "thick" | "normal";
+  vertical: boolean;
+  className: any;
+}

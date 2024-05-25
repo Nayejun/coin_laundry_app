@@ -10,8 +10,8 @@ const CTAButtonCollection: React.FC = () => {
 
 			<div className="space-y-4">
 				<h2 className="text-xl font-semibold mt-4">L size</h2>
-				<div className="grid grid-cols-4 gap-x-12">
-					<div className="space-y-4 mx-auto">
+				<div className="grid grid-cols-1 gap-4">
+					<div className="space-y-4">
 						<CTAButtonLarge
 							buttonColor="#13C2C2"
 							borderColor="#13C2C2"
@@ -38,7 +38,7 @@ const CTAButtonCollection: React.FC = () => {
 						/>
 					</div>
 
-					<div className="space-y-4 mx-auto">
+					<div className="space-y-4">
 						<CTAButtonLarge
 							buttonColor="#AEB0B6"
 							borderColor="#AEB0B6"
@@ -60,8 +60,8 @@ const CTAButtonCollection: React.FC = () => {
 					</div>
 				</div>
 				<h2 className="text-xl font-semibold mt-4">M size</h2>
-				<div className="grid grid-cols-4 gap-x-12">
-        <div className="space-y-4 mx-auto">
+				<div className="grid grid-cols-1 gap-4">
+					<div className="space-y-4">
 						<CTAButtonMedium
 							buttonColor="#13C2C2"
 							borderColor="#00C4CC"
@@ -88,7 +88,7 @@ const CTAButtonCollection: React.FC = () => {
 						/>
 					</div>
 
-					<div className="space-y-4 mx-auto">
+					<div className="space-y-4">
 						<CTAButtonMedium
 							buttonColor="#AEB0B6"
 							borderColor="#AEB0B6"
@@ -110,8 +110,8 @@ const CTAButtonCollection: React.FC = () => {
 					</div>
 				</div>
 				<h2 className="text-xl font-semibold mt-4">S size</h2>
-				<div className="grid grid-cols-4 gap-x-12">
-        <div className="space-y-4 mx-auto">
+				<div className="grid grid-cols-1 gap-4">
+					<div className="space-y-4">
 						<CTAButtonSmall
 							buttonColor="#13C2C2"
 							borderColor="#13C2C2"
@@ -138,7 +138,7 @@ const CTAButtonCollection: React.FC = () => {
 						/>
 					</div>
 
-					<div className="space-y-4 mx-auto">
+					<div className="space-y-4">
 						<CTAButtonSmall
 							buttonColor="#AEB0B6"
 							borderColor="#AEB0B6"
