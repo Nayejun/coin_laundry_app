@@ -46,6 +46,7 @@ export type CTAButtonProps = {
   buttonTextSize?: string;
   buttonTextColor?: string;
   buttonTextWeight?: number;
+  onClick?: () => void;
   disabled?: boolean;
 };
 
@@ -66,6 +67,15 @@ export type RadiusBoxProps = {
 
 export type BasicDividerProps = {
   variant: "thick" | "normal";
-  vertical: boolean;
-  className: any;
+  vertical?: boolean;
+  className?: string;
+  width?: string;
 }
+
+export type ReviewProps = {
+  rating?: number;
+  review?: string;
+  date?: string;
+  storeName?: string;
+  images?: string[];
+};

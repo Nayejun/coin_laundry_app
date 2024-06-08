@@ -1,45 +1,54 @@
-import React from 'react';
+import React from "react";
 
-import { CTAButtonProps } from '@/lib/types';
+export type CTAButtonProps = {
+	buttonWidth?: string;
+	buttonHeight?: string;
+	buttonColor?: string;
+	borderColor?: string;
+	borderThickness?: string;
+	borderRadius?: string;
+	buttonText?: string;
+	buttonTextSize?: string;
+	buttonTextColor?: string;
+	buttonTextWeight?: number;
+	onClick?: () => void;
+	disabled?: boolean;
+};
 
 const CTAButtonSmall: React.FC<CTAButtonProps> = ({
-  buttonWidth = "140px",
-  buttonHeight = "52px",
-  buttonColor,
-  borderColor,
-  borderThickness,
-  borderRadius = "8px",
-  buttonText,
-  buttonTextSize = "16px",
-  buttonTextWeight = 600,
-  buttonTextColor,
-  disabled = false,
+	buttonWidth = "140px",
+	buttonHeight = "52px",
+	buttonColor,
+	borderColor,
+	borderThickness,
+	borderRadius = "8px",
+	buttonText,
+	buttonTextSize = "16px",
+	buttonTextWeight = 600,
+	buttonTextColor,
+	disabled = false,
+	onClick,
 }) => {
-  const buttonStyles = {
-    width: buttonWidth,
-    height: buttonHeight,
-    backgroundColor: buttonColor,
-    borderColor: borderColor,
-    borderWidth: borderThickness,
-    borderRadius: borderRadius,
-    text: buttonText,
-    fontSize: buttonTextSize,
-    fontWeight: buttonTextWeight,
-    color: buttonTextColor,
-    disabled: disabled,
-  };
-
-  return (
-    <button
-      className={`flex justify-center items-center font-semibold rounded-md transition-colors duration-300 ${
-        disabled ? 'cursor-not-allowed' : 'cursor-pointer'
-      }`}
-      style={buttonStyles}
-      disabled={disabled}
-    >
-      {buttonText}
-    </button>
-  );
+	return (
+		<button
+			style={{
+				width: buttonWidth,
+				height: buttonHeight,
+				backgroundColor: buttonColor,
+				borderColor: borderColor,
+				borderWidth: borderThickness,
+				borderRadius: borderRadius,
+				fontSize: buttonTextSize,
+				fontWeight: buttonTextWeight,
+				color: buttonTextColor,
+			}}
+			disabled={disabled}
+			onClick={onClick} // Attach onClick handler here
+			className="flex items-center justify-center"
+		>
+			{buttonText}
+		</button>
+	);
 };
 
 export default CTAButtonSmall;

@@ -5,10 +5,11 @@ export const BasicDivider = ({
 	variant,
 	vertical,
 	className,
+	width = "100%", // Default to 100% if not provided, you can use pixels or percentages
 }: BasicDividerProps): JSX.Element => {
 	return (
 		<div
-			className={`relative ${vertical ? "w-px" : "w-[375px]"} ${
+			className={`relative ${vertical ? "w-px" : ""} ${
 				vertical ? "flex" : ""
 			} ${vertical ? "flex-col" : ""} ${
 				vertical ? "items-center" : ""
@@ -27,6 +28,7 @@ export const BasicDivider = ({
 					? "bg-background-normal-alternative"
 					: ""
 			} ${className}`}
+			style={{ width: !vertical ? width : undefined }} // Apply width if not vertical
 		>
 			{vertical && (
 				<div className="relative flex-1 w-px grow bg-line-normal" />
@@ -34,8 +36,3 @@ export const BasicDivider = ({
 		</div>
 	);
 };
-
-// BasicDivider.propTypes = {
-// 	variant: PropTypes.oneOf(["thick", "normal"]),
-// 	vertical: PropTypes.bool,
-// };

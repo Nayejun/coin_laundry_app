@@ -1,7 +1,7 @@
 import React from "react";
-import CTAButtonLarge from "@/components/ui/ctaButtonLarge";
-import CTAButtonMedium from "@/components/ui/ctaButtonMedium";
-import CTAButtonSmall from "@/components/ui/ctaButtonSmall";
+import CTAButtonLarge from "@/components/ui/CTAButtonLarge";
+import CTAButtonMedium from "@/components/ui/CTAButtonMedium";
+import CTAButtonSmall from "@/components/ui/CTAButtonSmall";
 
 const CTAButtonCollection: React.FC = () => {
 	return (

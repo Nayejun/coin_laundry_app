@@ -4,7 +4,7 @@ import { RatingStarsProps } from "@/lib/types";
 
 const RatingStars: FC<RatingStarsProps> = ({ defaultValue, onChange }) => {
   return (
-    <div className="mx-[10px] my-[10px]">
+    <div className="mx-[10px] ">
       <Rate allowHalf defaultValue={defaultValue} onChange={onChange} />
     </div>
   );
