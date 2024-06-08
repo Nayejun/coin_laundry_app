@@ -3,25 +3,23 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
-const ToggleSwitchWeb = dynamic(() => import("@/components/ToggleSwitchWeb"), { ssr: false });
-const ToggleSwitchAndroid = dynamic(() => import("@/components/ToggleSwitchAndroid"), { ssr: false });
-const ToggleSwitchIOS = dynamic(() => import("@/components/ToggleSwitchIOS"), { ssr: false });
-const ToggleSwitchCollection = dynamic(() => import("@/components/ToggleSwitchCollection"), { ssr: false });
+import ToggleSwitchWeb from "@/components/ToggleSwitchWeb";
+import ToggleSwitchAndroid from "@/components/ToggleSwitchAndroid";
+import ToggleSwitchIOS from "@/components/ToggleSwitchIOS";
+import ToggleSwitchCollection from "@/components/ToggleSwitchCollection";
 
 export default function Page() {
-  return (
-    <>  
-    <div className="flex">
-      <ToggleSwitchWeb />
-      <ToggleSwitchAndroid />
-      <ToggleSwitchIOS />
-      
-    </div>
+	return (
+		<>
+			<div className="flex">
+				<ToggleSwitchWeb />
+				<ToggleSwitchAndroid />
+				<ToggleSwitchIOS />
+			</div>
 
-    <div>
-      <ToggleSwitchCollection />
-    </div>
-    </>
-
-  );
+			<div>
+				<ToggleSwitchCollection />
+			</div>
+		</>
+	);
 }

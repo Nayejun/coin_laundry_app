@@ -79,3 +79,8 @@ export type ReviewProps = {
   storeName?: string;
   images?: string[];
 };
+
+export type PageProps = {
+  label: string;
+  onClick: () => void;
+};
