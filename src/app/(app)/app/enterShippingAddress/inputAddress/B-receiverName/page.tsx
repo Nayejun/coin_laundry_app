@@ -47,10 +47,10 @@ const ReceiverName: FC = () => {
 	};
 
 	useEffect(() => {
-		const savedInput = localStorage.getItem("receiverName");
+		const savedReceiverName = localStorage.getItem("receiverName");
 		const savedShippingName = localStorage.getItem("shippingName");
-		if (savedInput) {
-			setInputValue(savedInput); // Load saved input from localStorage into state
+		if (savedReceiverName) {
+			setInputValue(savedReceiverName); // Load saved input from localStorage into state
 			setIsButtonGray(false); // If there's a saved input, show the static input
 		}
 		if (savedShippingName) {

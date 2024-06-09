@@ -38,6 +38,7 @@ const SearchActivePage: FC = ({}) => {
     localStorage.setItem("selectedAddress", address);
     console.log(`Saved address: ${address}`);
     alert(`Saved address: ${address}`);
+    router.push("/app/enterShippingAddress/inputAddress/D-addAddress");
   };
 
   return (
@@ -51,7 +52,7 @@ const SearchActivePage: FC = ({}) => {
           {!query ? (
             <>
               <BasicDivider
-                className="!bg-background-normal-alternative !w-[390px]"
+                className=""
                 variant="thick"
                 vertical={false}
               />

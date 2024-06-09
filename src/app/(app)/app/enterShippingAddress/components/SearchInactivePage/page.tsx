@@ -30,7 +30,9 @@ const SearchInactivePage: FC<SearchInactivePageProps> = ({
 					배송 받으실 주소
 				</div>
 			</div>
+			<div className="w-[390px] bg-white pl-[24px]">
 			<SearchInactive onClick={handleActivate} />
+			</div>
 		</div>
 	);
 };
