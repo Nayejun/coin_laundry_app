@@ -76,6 +76,8 @@ const Mapbox = () => {
 				latitude: location.latitude,
 				longitude: location.longitude,
 				zoom: 13,
+				maxZoom: 17,
+				minZoom: 11.5,
 			});
 			getSeoulAdministrativeDistrict(
 				location.latitude,
