@@ -1,7 +1,7 @@
 import React from "react";
 import SearchInactiveSmall from "@/assets/icons/others/searchInactiveSmall.svg"; // Adjust the path as necessary
 
-const SearchInactive = ({ onClick }) => {
+const SearchInactive = ({ onClick, onClickDetail }) => {
 	return (
 		<div>
 			<div
@@ -23,7 +23,7 @@ const SearchInactive = ({ onClick }) => {
 					type="text"
 					placeholder="상세 주소 입력"
 					className="input-common bg-[#FFF] text-black w-full outline-none"
-					
+					onClick={onClickDetail}
 				/>
 			</div>
 		</div>

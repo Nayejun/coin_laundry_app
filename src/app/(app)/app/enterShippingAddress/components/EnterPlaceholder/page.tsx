@@ -1,3 +1,7 @@
+/*
+Input field with placeholder as a prop
+*/
+
 import React, { FC } from "react";
 
 interface EnterPlaceholderProps {

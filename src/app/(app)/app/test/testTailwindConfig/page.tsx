@@ -342,15 +342,15 @@ const Page = () => {
 					<div className="flex w-36  h-20 items-center justify-center bg-primary-color-cyan-900">
 						bg-primary-color-cyan-900
 					</div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-800"></div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-700"></div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-600"></div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-500"></div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-400"></div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-300"></div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-200"></div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-100"></div>
-					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-50"></div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-800">800</div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-700">700</div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-600">600</div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-500">500</div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-400">400</div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-300">300</div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-200">200</div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-100">100</div>
+					<div className="flex w-12  h-20 items-center justify-center bg-primary-color-cyan-50">50</div>
 				</div>
 				<h3 className="text-heading-2 mt-4">Border-Radius</h3>
 				<div className="flex space-x-4">

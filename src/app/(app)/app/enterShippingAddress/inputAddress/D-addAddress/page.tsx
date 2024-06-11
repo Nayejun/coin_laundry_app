@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useState } from "react";
 import { useRouter } from "next/navigation";
-import SearchStaticPage from "../../components/SearchStaticPage/page";
+import SearchStaticPage from "@/app/(app)/app/enterShippingAddress/components/SearchStaticPage/page";
 
 const Page: FC = ({}) => {
 

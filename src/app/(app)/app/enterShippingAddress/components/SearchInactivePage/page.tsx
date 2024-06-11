@@ -31,7 +31,7 @@ const SearchInactivePage: FC<SearchInactivePageProps> = ({
 				</div>
 			</div>
 			<div className="w-[390px] bg-white pl-[24px]">
-			<SearchInactive onClick={handleActivate} />
+			<SearchInactive onClick={handleActivate} onClickDetail={handleActivate} />
 			</div>
 		</div>
 	);
