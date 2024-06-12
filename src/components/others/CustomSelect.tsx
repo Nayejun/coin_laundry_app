@@ -27,16 +27,12 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
 	return (
 		<div
-			className="relative inline-block w-full cursor-pointer"
+			className="relative cursor-pointer w-[342px] h-[46px]"
 			onClick={() => setIsOpen(!isOpen)}
 		>
-			<div className="flex justify-between items-center border border-gray-300 rounded-md px-1 py-2">
+			<div className="flex justify-between items-center border border-gray-300 rounded-md px-[6px] py-[12px]">
 				<span
-					className={`${
-						value === "default"
-							? "text-body-2-reading font-semibold text-label-neutral"
-							: "text-body-2-reading font-semibold text-label-neutral"
-					} ml-[10px]`}
+					className={`${"text-body-2-reading font-semibold text-label-neutral"} ml-[10px]`}
 				>
 					{options.find((option) => option.value === value)?.label}
 				</span>
@@ -47,20 +43,20 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 				/>
 			</div>
 			{isOpen && (
-				<div className="absolute top-full left-0 right-0 bg-white border border-gray-300 z-10 max-h-48 overflow-y-auto rounded-md">
+				<div className="absolute top-full left-0 right-0 bg-white border-gray-300 z-10 max-h-48 overflow-y-auto rounded-md mt-[10px] shadow-elevation-shadow-emphasize">
 					{options.map((option) => (
 						<div
 							key={option.value}
-							className={`pl-[12px] py-[10px] text-body-2-reading ${
+							className={`pl-[16px] py-[12px] text-body-2-reading ${
 								option.value === value
-									? "text-primary-normal flex items-center bg-primary-color-cyan-50"
-									: "text-label-assistive"
+									? "text-primary-strong font-semibold flex items-center bg-[#EFF7F7]"
+									: "text-label-neutral font-semibold"
 							}`}
 							onClick={() => handleSelect(option.value)}
 						>
 							{option.label}
 							{option.value === value && (
-								<CheckMarkIcon className="absolute right-[16px] w-3 h-3" />
+								<CheckMarkIcon className="absolute right-[16px] w-[16px] h-[12px]" />
 							)}
 						</div>
 					))}

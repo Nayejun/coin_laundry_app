@@ -36,6 +36,13 @@ const CarrierOption: React.FC = () => {
     setCarrierInput(e.target.value);
   };
 
+  const options = [
+    "문 앞에 놓아 주세요",
+    "경비실에 맡겨 주세요",
+    "택배함에 넣어 주세요",
+    "직접 입력"
+  ];
+
   return (
     <div>
       <div className="mt-[40px] text-label-1-normal mb-[8px]">캐리어 님께</div>
@@ -44,12 +51,7 @@ const CarrierOption: React.FC = () => {
         id="carrier-options"
         value={carrierOption}
         onChange={(e) => setCarrierOption(e.target.value)}
-        options={[
-          { value: "문 앞에 놓아 주세요", label: "문 앞에 놓아 주세요" },
-          { value: "경비실에 맡겨 주세요", label: "경비실에 맡겨 주세요" },
-          { value: "택배함에 넣어 주세요", label: "택배함에 넣어 주세요" },
-          { value: "직접 입력", label: "직접 입력" },
-        ]}
+        options={options.map(option => ({ value: option, label: option }))}
       />
       {carrierOption === "직접 입력" && (
         <div className="mt-2">
@@ -59,7 +61,7 @@ const CarrierOption: React.FC = () => {
             placeholder="직접 입력해 주세요"
             value={carrierInput}
             onChange={handleInputChange}
-            className="border border-line-normal text-body-2-normal rounded-md px-3 py-2 w-full outline-none"
+            className="border border-line-normal text-body-2-normal rounded-md px-3 py-[12px] mt-[8px] w-full outline-none"
           />
         </div>
       )}

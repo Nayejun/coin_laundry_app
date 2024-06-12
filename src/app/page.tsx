@@ -1,17 +1,19 @@
 // src/pages/index.tsx
+"use client";
 import React from "react";
-import MainView from "@/app/(public)/beforeLogin/components/A-MainViewBeforeLogin/page";
-import ContainerInactiveLaundryPage from "@/app/(public)/beforeLogin/components/B-ContainerLaundryPageBeforeLogin/page";
-import ContainerReviewPage from "@/app/(app)/home/components/D-ContainerReviewAfterLogin/page";
-import AppFooter from "@/app/(app)/home/components/F-Footer/page";
+import { useAuth } from "@/context/AuthContext";
+import BeforeLoginHomePage from "@/app/(public)/beforeLogin/page";
+import AfterLoginHomePage from "@/app/(app)/home/page";
 
 export default function HomePage() {
+	const { isLoggedin } = useAuth();
+
+	console.log("HomePage rendered");
+	console.log("isLoggedin:", isLoggedin);
+
 	return (
 		<div>
-			<MainView />
-			<ContainerInactiveLaundryPage />
-			<ContainerReviewPage />
-			<AppFooter />
+			{isLoggedin ? <AfterLoginHomePage /> : <BeforeLoginHomePage />}
 		</div>
 	);
 }
