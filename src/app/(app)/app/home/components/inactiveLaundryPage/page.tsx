@@ -17,7 +17,9 @@ const InactiveLaundryPage = () => {
 	const totalTime = 32 * 60 * 60; // total time in seconds (32 hours)
 	const initialRemainingTime = 29 * 60 * 60 + 59 * 60; // remaining time in seconds (29 hours 59 minutes)
 
-	const [remainingTime, setRemainingTime] = useState(initialRemainingTime);
+	const [remainingTime, setRemainingTime] = useState(
+		initialRemainingTime
+	);
 	const router = useRouter(); // Initialize the router
 
 	useEffect(() => {
@@ -33,7 +35,9 @@ const InactiveLaundryPage = () => {
 	const progressPercentage = (remainingTime / totalTime) * 100;
 
 	const handleSetInfo = () => {
-		router.push("/app/enterShippingAddress/inputAddress/A-shippingName"); // Navigate to the A-shippingName page
+		router.push(
+			"/app/enterShippingAddress/inputAddress/A-shippingName"
+		); // Navigate to the A-shippingName page
 	};
 
 	return (

@@ -24,7 +24,10 @@ const config: Config = {
 					"radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+				userGuide:
+					"linear-gradient(180deg, rgba(8, 151, 156, 0.00) 31.06%, #08979C 100%)",
 			},
+
 			// text-primary-strong
 			colors: {
 				primary: {
@@ -169,6 +172,7 @@ const config: Config = {
 			opacity: {
 				"16": "0.16",
 			},
+
 			fontSize: {
 				"title-1": [
 					"24px",
