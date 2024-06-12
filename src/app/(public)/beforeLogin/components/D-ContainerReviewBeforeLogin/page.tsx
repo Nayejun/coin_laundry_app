@@ -1,4 +1,4 @@
-import ChevronRightIcon from "@/assets/icons/main/chevron-right.svg";
+import ChevronRightIconLarge from "@/assets/icons/others/chevron-right-large.svg";
 import ReviewPage from "@/app/(public)/beforeLogin/components/E-ReviewPageBeforeLogin/page";
 
 const ContainerReviewPage = () => {
@@ -9,15 +9,12 @@ const ContainerReviewPage = () => {
 					<div className="w-[390px] mb-4">
 						<div className="flex justify-between items-center">
 							<div className="flex-1">
-								<div className="flex items-center justify-between mt-5">
-									<h2 className="text-lg font-bold ml-[20px]">
+								<div className="flex items-center justify-between">
+									<h2 className="text-headline-1 ml-[20px]">
 										사용자들의 내돈내산 후기
 									</h2>
-									<span className="mr-[20px] flex-shrink-0">
-										<ChevronRightIcon className="w-[20px] h-[20px]" />
-									</span>
 								</div>
-								<p className="text-sm text-gray-600 ml-[20px]">
+								<p className="text-label-1-normal text-label-alternative ml-[20px]">
 									리뷰는 결제 내역이 있는 실제 사용자들만 남길 수
 									있어요!
 								</p>
@@ -27,7 +24,7 @@ const ContainerReviewPage = () => {
 					<div className="flex justify-center">
 						<div className="w-[350px]">
 							<div className="flex">
-								<ReviewPage />
+								<ReviewPage isEditable={false} />
 							</div>
 						</div>
 					</div>

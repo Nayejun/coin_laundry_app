@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import SearchActiveSmall from "@/assets/icons/others/searchActiveSmall.svg"; // Adjust the path as necessary
-import "@/styles/global.css";
+import "@/app/global.css";
 
 interface SearchActiveProps {
 	value?: string;
