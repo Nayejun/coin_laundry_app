@@ -10,12 +10,25 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			keyframes: {
+				moveLeft: {
+					"0%": { transform: "translateX(0)" },
+					"100%": { transform: "translateX(-306px)" }, // 290px width + 16px gap
+				},
+			},
+			animation: {
+				moveLeft: "moveLeft 2s forwards",
+			},
 			backgroundImage: {
 				"gradient-radial":
 					"radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+				userGuide:
+					"linear-gradient(180deg, rgba(8, 151, 156, 0.00) 31.06%, #08979C 100%)",
 			},
+
+			// text-primary-strong
 			colors: {
 				primary: {
 					normal: "#13C2C2",
@@ -81,7 +94,7 @@ const config: Config = {
 						dimmer: "rgba(23, 23, 25, 0.52)",
 					},
 				},
-				
+
 				neutral: {
 					99: "#F7F7F7",
 					95: "#DCDCDC",
@@ -136,20 +149,20 @@ const config: Config = {
 					},
 				},
 			},
-      boxShadow: {
-        'elevation-shadow-normal': `0 0 1px 0 rgba(0, 0, 0, 0.08), 
+			boxShadow: {
+				"elevation-shadow-normal": `0 0 1px 0 rgba(0, 0, 0, 0.08), 
           0 0 1px 0 rgba(0, 0, 0, 0.08),
           0 1px 2px 0 rgba(0, 0, 0, 0.12)`,
-        'elevation-shadow-emphasize': `0 0 1px 0 rgba(0, 0, 0, 0.08), 
+				"elevation-shadow-emphasize": `0 0 1px 0 rgba(0, 0, 0, 0.08), 
           0 1px 4px 0 rgba(0, 0, 0, 0.08),
           0 2px 8px 0 rgba(0, 0, 0, 0.12)`,
-        'elevation-shadow-strong': `0 0 4px 0 rgba(0, 0, 0, 0.08), 
+				"elevation-shadow-strong": `0 0 4px 0 rgba(0, 0, 0, 0.08), 
           0 4px 8px 0 rgba(0, 0, 0, 0.08),
           0 6px 12px 0 rgba(0, 0, 0, 0.12)`,
-        'elevation-shadow-heavy': `0 0 8px 0 rgba(0, 0, 0, 0.08), 
+				"elevation-shadow-heavy": `0 0 8px 0 rgba(0, 0, 0, 0.08), 
           0 8px 16px 0 rgba(0, 0, 0, 0.08),
           0 16px 20px 0 rgba(0, 0, 0, 0.12)`,
-      },
+			},
 			borderRadius: {
 				sm: "4px",
 				md: "8px",
@@ -159,6 +172,7 @@ const config: Config = {
 			opacity: {
 				"16": "0.16",
 			},
+
 			fontSize: {
 				"title-1": [
 					"24px",
