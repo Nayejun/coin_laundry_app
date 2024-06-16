@@ -11,9 +11,8 @@ import GuideTime from "./components/GuideTime";
 const UserGuide = () => {
 	const router = useRouter();
 
-	console.log(router);
+	// console.log(router);
 	return (
-		// useRouter
 		<>
 			<section id="introduce">
 				<MainBanner />
