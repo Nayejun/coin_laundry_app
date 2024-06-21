@@ -6,6 +6,8 @@ interface EnterPlaceholderSmallerProps {
   placeholder: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  ref?: React.forwardRef;
 }
 
 const EnterPlaceholderSmaller: React.FC<EnterPlaceholderSmallerProps> = ({
@@ -13,6 +15,8 @@ const EnterPlaceholderSmaller: React.FC<EnterPlaceholderSmallerProps> = ({
   placeholder,
   value,
   onChange,
+  onFocus,
+  ref
 }) => {
   return (
     <input
@@ -21,7 +25,7 @@ const EnterPlaceholderSmaller: React.FC<EnterPlaceholderSmallerProps> = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className="border border-line-normal text-body-2-normal rounded-md px-3 py-2 w-full outline-none"
+      className="border border-line-normal text-body-1-normal rounded-md px-3 py-2 w-full mr-[24px] outline-none"
     />
   );
 };

@@ -19,13 +19,12 @@ const MainView: React.FC = () => {
 	const router = useRouter(); // Initialize the router
 
 	const handleSetInfo = () => {
-		router.push("/enterAddress/inputAddress/A-ShippingName"); // Navigate to the A-ShippingName page
-	};
-	
-	const navigateToUserGuide = () => {
-		router.push("/userGuide"); // Navigate to the 
+		router.push("/enterAddress/inputAddress/shippingName"); // Navigate to the shippingName page
 	};
 
+	const navigateToUserGuide = () => {
+		router.push("/userGuide"); // Navigate to the
+	};
 
 	return (
 		<div className="bg-gray-50">
@@ -55,7 +54,10 @@ const MainView: React.FC = () => {
 					<div className="text-heading-2 font-semibold">
 						세탁 신청
 					</div>
-					<button onClick={navigateToUserGuide} className="flex text-primary-strong text-label-1-normal justify-between items-center space-x-1">
+					<button
+						onClick={navigateToUserGuide}
+						className="flex text-primary-strong text-label-1-normal justify-between items-center space-x-1"
+					>
 						<Info className="fill-primary-strong " />
 						<div>이용 가이드 보기</div>
 						<ChevronRightIcon className="fill-primary-strong" />
@@ -111,7 +113,7 @@ const MainView: React.FC = () => {
 				<div className="w-[350px] h-[60px]">
 					<button className="w-full flex items-center justify-center bg-white p-4 rounded-xl">
 						<NavigationIcon className="mr-2 w-5 h-6" /> <br />
-						<span className="text-label-1-reading font-semibold">
+						<span className="text-label-1-normal font-semibold">
 							내 주위 이용 가능한 코인 세탁소 보기
 						</span>
 					</button>

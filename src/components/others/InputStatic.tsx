@@ -7,7 +7,7 @@ interface InputStaticProps {
 const InputStatic = ({ value }: InputStaticProps) => {
 	return (
 		<div>
-			<div className="flex items-center rounded-[10px] w-[342px] h-[48px] px-[16px] py-[12px] bg-[#F8F8FA] border-line-normal">
+			<div className="flex items-center rounded-md w-[342px] h-[48px] px-[16px] py-[12px] bg-[#F8F8FA] border-line-normal">
 				<input
 					type="text"
 					value={value}

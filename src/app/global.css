@@ -1,66 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer utilities {
-  .hide-scrollbar {
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
-  }
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
+	.hide-scrollbar {
+		-ms-overflow-style: none; /* Internet Explorer 10+ */
+		scrollbar-width: none; /* Firefox */
+	}
+	.hide-scrollbar::-webkit-scrollbar {
+		display: none; /* Safari and Chrome */
+	}
 }
 
 /* InputCommon.css */
 .input-common::placeholder {
-  @apply text-label-assistive font-normal text-body-2-normal;
+	@apply text-label-assistive font-normal text-body-1-normal;
 }
 
 .custom-select-container {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px 12px;
-  background-color: #fff;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 8px 12px;
+	background-color: #fff;
 }
 
 .selected-value {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .arrow-icon {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s;
+	width: 16px;
+	height: 16px;
+	transition: transform 0.3s;
 }
 
 .arrow-icon.open {
-  transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-top: none;
-  z-index: 1000;
-  max-height: 200px;
-  overflow-y: auto;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-top: none;
+	z-index: 1000;
+	max-height: 200px;
+	overflow-y: auto;
 }
 
 .option {
-  padding: 8px 12px;
+	padding: 8px 12px;
 }
 
 .option:hover {
-  background-color: #f1f1f1;
+	background-color: #f1f1f1;
 }

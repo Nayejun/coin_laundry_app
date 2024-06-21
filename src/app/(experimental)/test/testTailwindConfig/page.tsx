@@ -355,16 +355,16 @@ const Page = () => {
 				<h3 className="text-heading-2 mt-4">Border-Radius</h3>
 				<div className="flex space-x-4">
 					<div className="flex w-36  h-20 items-center justify-center bg-gray-300 rounded-sm">
-						rounded-sm
+						rounded-sm border 4px
 					</div>
 					<div className="flex w-36  h-20 items-center justify-center bg-gray-300 rounded-md">
-						rounded-md
+						rounded-md border 8px
 					</div>
 					<div className="flex w-36  h-20 items-center justify-center bg-gray-300 rounded-lg whitespace-normal">
-						rounded-lg
+						rounded-lg border 12px
 					</div>
 					<div className="flex w-36  h-20 items-center justify-center bg-gray-300 rounded-xl">
-						rounded-xl
+						rounded-xl border 20px
 					</div>
 				</div>
 				<h3 className="text-heading-2 mt-4">Font-Size</h3>

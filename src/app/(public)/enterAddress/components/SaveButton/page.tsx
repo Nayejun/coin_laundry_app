@@ -1,6 +1,6 @@
 "use client";
 import React, { FC } from "react";
-import ActionButton from "@/components/ui/ActionButton";
+import ActionButton from "@/app/(public)/enterAddress/components/common/ActionButton/page";
 import { BasicDivider } from "@/components/ui/BasicDivider";
 
 interface PageProps {
@@ -9,23 +9,21 @@ interface PageProps {
 }
 
 const Page: FC<PageProps> = ({ label, onClick }) => {
-
-  // onClick navigate to another page
-
+	// onClick navigate to another page
 
 	return (
-		<>
-			<div>
-      <div className="fixed bottom-[28px] left-1/2 transform -translate-x-1/2 bg-white flex flex-col justify-around items-center h-16 w-[390px] rounded-md z-40">
-        <BasicDivider variant="normal"/>
-        <div className="h-[20px]"></div>
-				<ActionButton label={"저장"} onClick={onClick} />
-      </div>
+		<div>
+			<div className="fixed bottom-24 w-full max-w-[430px] h-[1px] bg-line-normal border shadow-elevation-shadow-emphasize">
+				{" "}
+				{/* Adjusted bottom position */}
+				<ActionButton
+					label="저장"
+					onClick={onClick}
+					className="w-full text-primary-normal"
+				/>
 			</div>
-		</>
+		</div>
 	);
 };
 
 export default Page;
-
-

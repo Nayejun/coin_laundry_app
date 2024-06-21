@@ -12,94 +12,47 @@ import MapClothingStoreOff from "@/assets/icons/footer/map-clothing-store-off.sv
 import ProfileOn from "@/assets/icons/footer/profile-on.svg";
 import ProfileOff from "@/assets/icons/footer/profile-off.svg";
 
+const routes = [
+    { path: "/", label: "홈", IconOn: HomeOn, IconOff: HomeOff },
+    { path: "/team-discount", label: "팀, 알뜰 세탁", IconOn: MageboxOn, IconOff: MageboxOff },
+    { path: "/laundry-status", label: "내 빨래 현황", IconOn: MapClothingStoreOn, IconOff: MapClothingStoreOff },
+    { path: "/profile", label: "마이페이지", IconOn: ProfileOn, IconOff: ProfileOff },
+];
+
 export default function AppFooter() {
-	const pathname = usePathname();
-	const router = useRouter();
+    const pathname = usePathname();
+    const router = useRouter();
 
-	const handleNavigation = (path: string) => {
-		router.push(path);
-	};
+    const handleNavigation = (path: string) => {
+        router.push(path);
+    };
 
-	return (
-		<div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-white shadow-lg flex justify-around items-center h-16 w-[390px]  rounded-md z-40">
-			<div className="flex w-full justify-between px-6">
-				<button
-					onClick={() => handleNavigation("/")}
-					className="flex flex-col items-center flex-1"
-				>
-					{pathname === "/" ? (
-						<HomeOn className="w-6 h-6 mb-1" />
-					) : (
-						<HomeOff className="w-6 h-6 mb-1" />
-					)}
-					<span
-						className={`text-xs ${
-							pathname === "/app/home/mainView"
-								? "text-primary"
-								: "text-gray-400"
-						}`}
-					>
-						홈
-					</span>
-				</button>
-				<button
-					onClick={() => handleNavigation("/app/magebox")}
-					className="flex flex-col items-center flex-1"
-				>
-					{pathname === "/app/magebox" ? (
-						<MageboxOn className="w-6 h-6 mb-1" />
-					) : (
-						<MageboxOff className="w-6 h-6 mb-1" />
-					)}
-					<span
-						className={`text-xs ${
-							pathname === "/app/magebox"
-								? "text-primary"
-								: "text-gray-400"
-						}`}
-					>
-						수거신청
-					</span>
-				</button>
-				<button
-					onClick={() => handleNavigation("/app/mapClothingStore")}
-					className="flex flex-col items-center flex-1"
-				>
-					{pathname === "/app/mapClothingStore" ? (
-						<MapClothingStoreOn className="w-6 h-6 mb-1" />
-					) : (
-						<MapClothingStoreOff className="w-6 h-6 mb-1" />
-					)}
-					<span
-						className={`text-xs ${
-							pathname === "/app/mapClothingStore"
-								? "text-primary"
-								: "text-gray-400"
-						}`}
-					>
-						내 빨래 현황
-					</span>
-				</button>
-				<button
-					onClick={() => handleNavigation("/app/profile")}
-					className="flex flex-col items-center flex-1"
-				>
-					{pathname === "/app/profile" ? (
-						<ProfileOn className="w-6 h-6 mb-1" />
-					) : (
-						<ProfileOff className="w-6 h-6 mb-1" />
-					)}
-					<span
-						className={`text-xs ${
-							pathname === "/app/profile"
-								? "text-primary"
-								: "text-gray-400"
-						}`}
-					>
-						마이페이지
-					</span>
-				</button>
-			</div>
-		</div>
-	);
+    return (
+        <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 bg-white flex justify-around items-center h-16 w-[390px] rounded-md z-40">
+            <div className="flex w-full justify-between px-6">
+                {routes.map((route) => (
+                    <button
+                        key={route.path}
+                        onClick={() => handleNavigation(route.path)}
+                        className="flex flex-col items-center flex-1"
+                    >
+                        {pathname === route.path ? (
+                            <route.IconOn className="w-6 h-6 mb-1" />
+                        ) : (
+                            <route.IconOff className="w-6 h-6 mb-1" />
+                        )}
+                        <span
+                            className={`text-xs ${
+                                pathname === route.path
+                                    ? "text-primary"
+                                    : "text-gray-400"
+                            }`}
+                        >
+                            {route.label}
+                        </span>
+                    </button>
+                ))}
+            </div>
+        </div>
+    );
 }

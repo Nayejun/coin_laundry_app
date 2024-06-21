@@ -9,7 +9,7 @@ import {
 	faCircleCheck,
 	faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import ActionButton from "@/components/ui/ActionButton"; // Importing ActionButton
+import ActionButtonOriginal from "@/components/ui/ActionButtonOriginal"; // Importing ActionButton
 import { ValidationFormWithTitleProps } from "@/lib/types";
 // Define the validation schema using Yup
 const validationSchema = Yup.object().shape({
@@ -17,11 +17,12 @@ const validationSchema = Yup.object().shape({
 	title: Yup.string(),
 });
 
-const ValidationFormWithTitle: FC<ValidationFormWithTitleProps> = ({
-	hasTitle,
-}) => {
+const ValidationFormWithTitle: FC<
+	ValidationFormWithTitleProps
+> = ({ hasTitle }) => {
 	const [isTitleDisabled, setIsTitleDisabled] = useState(false);
-	const [showMismatchError, setShowMismatchError] = useState(false);
+	const [showMismatchError, setShowMismatchError] =
+		useState(false);
 	const {
 		control,
 		handleSubmit,
@@ -136,7 +137,10 @@ const ValidationFormWithTitle: FC<ValidationFormWithTitleProps> = ({
 										<FontAwesomeIcon
 											icon={faCircleCheck}
 											className="absolute right-3 top-1/2 transform -translate-y-1/2"
-											style={{ fontSize: "14px", color: "#00BF40" }}
+											style={{
+												fontSize: "14px",
+												color: "#00BF40",
+											}}
 										/>
 									)}
 								{field.value &&
@@ -146,7 +150,10 @@ const ValidationFormWithTitle: FC<ValidationFormWithTitleProps> = ({
 										<FontAwesomeIcon
 											icon={faCircleXmark}
 											className="absolute right-3 top-1/2 transform -translate-y-1/2"
-											style={{ fontSize: "14px", color: "#FF4242" }}
+											style={{
+												fontSize: "14px",
+												color: "#FF4242",
+											}}
 										/>
 									)}
 							</div>
@@ -170,7 +177,7 @@ const ValidationFormWithTitle: FC<ValidationFormWithTitleProps> = ({
 				</div>
 
 				<div className="flex items-center justify-center gap-4">
-					<ActionButton
+					<ActionButtonOriginal
 						label="확인"
 						onClick={handleSubmit(onSubmit)}
 					/>
