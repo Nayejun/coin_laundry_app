@@ -8,12 +8,8 @@ import MyLocationMarkerImg from "@/assets/MyLocationMarker";
 import LaundryRoomMarkerImg from "@/assets/LaundryRoomMarker";
 import SelectMarkerImg from "@/assets/SelectMarker";
 import { useGeoLocation } from "@/app/hooks/useGeoLocation";
-import { SeoulAdministrativeDistrict } from "@/assets/SeoulAdministrativeDistrict";
-import {
-	FeatureCollection,
-	Geometry,
-	GeoJsonProperties,
-} from "geojson";
+import { GeoJsonProperties } from "geojson";
+import * as turf from "@turf/turf";
 
 const geolocationOptions = {
 	enableHighAccuracy: true,
@@ -23,11 +19,7 @@ const geolocationOptions = {
 
 const MAP_TOKEN =
 	"pk.eyJ1IjoibGF1bmRyeS1mcm9udGVuZCIsImEiOiJjbHgyNDF4MmkwZml3MmtzNG91MHBpZ3Z2In0.UOaMbpvUJ3k1UrU8UUTOXQ";
-const KAKAO_API_URL =
-	"https://dapi.kakao.com/v2/local/geo/coord2regioncode.json";
-const KAKAO_API_KEY = "KakaoAK 85573ea9485abb72db9e44786219f539";
 
-// dummy store
 const storeList = [
 	{ name: "매장1", location: [37.472734, 126.969105] },
 	{ name: "매장2", location: [37.473236, 126.97035] },
@@ -37,8 +29,6 @@ const storeList = [
 ];
 
 const Mapbox = () => {
-	const [mappingDistrict, setMappingDistrict] =
-		useState<string>("");
 	const [initialViewState, setInitialViewState] =
 		useState<any>(null);
 	const [selectedMarkerIndex, setSelectedMarkerIndex] = useState<
@@ -52,29 +42,6 @@ const Mapbox = () => {
 		);
 	}, []);
 
-	const getSeoulAdministrativeDistrict = async (
-		latitude: number,
-		longitude: number
-	) => {
-		try {
-			const response = await fetch(
-				`${KAKAO_API_URL}?x=${longitude}&y=${latitude}`,
-				{
-					headers: {
-						Authorization: KAKAO_API_KEY,
-					},
-				}
-			);
-			const data = await response.json();
-			setMappingDistrict(data.documents[0].region_2depth_name);
-		} catch (error) {
-			console.error(
-				"위치 정보를 가져오는데 실패했어요.:",
-				error
-			);
-		}
-	};
-
 	useEffect(() => {
 		if (location) {
 			setInitialViewState({
@@ -84,43 +51,23 @@ const Mapbox = () => {
 				maxZoom: 17,
 				minZoom: 11.5,
 			});
-			getSeoulAdministrativeDistrict(
-				location.latitude,
-				location.longitude
-			);
 		} else if (error) {
 			console.error(error);
 		}
 	}, [location, error]);
 
-	const getDistrictCoordinates = (districtName: string) => {
-		return SeoulAdministrativeDistrict.flatMap((district) =>
-			district.features
-				.filter(
-					(feature) => feature.properties.name === districtName
-				)
-				.flatMap((feature) => feature.geometry.coordinates)
-		);
-	};
-
-	const generateGeoJSON = (districtName: string) => {
-		const coordinates = getDistrictCoordinates(districtName);
-		return {
-			type: "FeatureCollection",
-			features: [
-				{
-					type: "Feature",
-					geometry: {
-						type: "Polygon",
-						coordinates: coordinates,
-					},
-				},
-			],
-		};
-	};
-
-	const geojson = mappingDistrict
-		? generateGeoJSON(mappingDistrict)
+	const radius = 3;
+	const options: {
+		steps?: number | undefined;
+		units?: turf.Units | undefined;
+		properties?: GeoJsonProperties | undefined;
+	} = { steps: 64, units: "kilometers" };
+	const circle = location
+		? turf.circle(
+				[location.longitude, location.latitude],
+				radius,
+				options
+		  )
 		: null;
 
 	return (
@@ -154,31 +101,21 @@ const Mapbox = () => {
 							<MyLocationMarkerImg />
 						</Marker>
 					)}
-					{geojson && (
-						<Source
-							id="district"
-							type="geojson"
-							data={
-								geojson as FeatureCollection<
-									Geometry,
-									GeoJsonProperties
-								>
-							}
-						>
+					{circle && (
+						<Source id="circle" type="geojson" data={circle}>
 							<Layer
-								id="district-layer"
+								id="circle-layer"
 								type="fill"
 								paint={{
 									"fill-color": "#00B4B2",
-									"fill-opacity": 0.4,
+									"fill-opacity": 0.2,
 								}}
 							/>
 							<Layer
-								id="outline"
+								id="circle-outline"
 								type="line"
 								paint={{
-									"line-color": "#ADE4E5",
-									"line-width": 2,
+									"line-color": "#00B4B2",
 								}}
 							/>
 						</Source>

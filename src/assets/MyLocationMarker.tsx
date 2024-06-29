@@ -6,92 +6,32 @@ interface MarkerImgProps {
 const MyLocationMarkerImg = ({ onClick }: MarkerImgProps) => {
 	return (
 		<svg
-			width="40"
-			height="40"
-			viewBox="0 0 24 24"
+			width="32"
+			height="32"
+			viewBox="0 0 32 32"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<g filter="url(#filter0_ddd_2071_7436)">
-				<circle cx="12" cy="11" r="10" fill="#00A5A1" />
-			</g>
+			<rect
+				x="0.5"
+				y="0.5"
+				width="31"
+				height="31"
+				rx="15.5"
+				fill="#1677FF"
+			/>
+			<rect
+				x="0.5"
+				y="0.5"
+				width="31"
+				height="31"
+				rx="15.5"
+				stroke="white"
+			/>
 			<path
-				d="M17.625 10.5313V16.1563C17.625 16.2806 17.5756 16.3999 17.4877 16.4878C17.3998 16.5757 17.2806 16.6251 17.1562 16.6251H13.875C13.7507 16.6251 13.6315 16.5757 13.5435 16.4878C13.4556 16.3999 13.4062 16.2806 13.4062 16.1563V13.1094C13.4062 13.0473 13.3816 12.9877 13.3376 12.9437C13.2936 12.8997 13.234 12.8751 13.1719 12.8751H10.8281C10.766 12.8751 10.7064 12.8997 10.6624 12.9437C10.6184 12.9877 10.5938 13.0473 10.5938 13.1094V16.1563C10.5938 16.2806 10.5444 16.3999 10.4565 16.4878C10.3685 16.5757 10.2493 16.6251 10.125 16.6251H6.84375C6.71943 16.6251 6.6002 16.5757 6.51229 16.4878C6.42439 16.3999 6.375 16.2806 6.375 16.1563V10.5313C6.37512 10.2827 6.47396 10.0443 6.6498 9.86861L11.3373 5.18111C11.5131 5.00543 11.7515 4.90674 12 4.90674C12.2485 4.90674 12.4869 5.00543 12.6627 5.18111L17.3502 9.86861C17.526 10.0443 17.6249 10.2827 17.625 10.5313Z"
+				d="M22.6666 15.2997V22.1C22.6666 22.2503 22.6081 22.3944 22.5039 22.5007C22.3997 22.607 22.2584 22.6667 22.1111 22.6667H18.2222C18.0749 22.6667 17.9336 22.607 17.8294 22.5007C17.7252 22.3944 17.6666 22.2503 17.6666 22.1V18.4165C17.6666 18.3414 17.6374 18.2693 17.5853 18.2162C17.5332 18.163 17.4625 18.1332 17.3889 18.1332H14.6111C14.5374 18.1332 14.4668 18.163 14.4147 18.2162C14.3626 18.2693 14.3333 18.3414 14.3333 18.4165V22.1C14.3333 22.2503 14.2748 22.3944 14.1706 22.5007C14.0664 22.607 13.9251 22.6667 13.7778 22.6667H9.88887C9.74153 22.6667 9.60022 22.607 9.49603 22.5007C9.39184 22.3944 9.33331 22.2503 9.33331 22.1V15.2997C9.33345 14.9992 9.4506 14.711 9.65901 14.4986L15.2146 8.8317C15.4229 8.61931 15.7054 8.5 16 8.5C16.2945 8.5 16.577 8.61931 16.7854 8.8317L22.341 14.4986C22.5494 14.711 22.6665 14.9992 22.6666 15.2997Z"
 				fill="white"
 			/>
-			<defs>
-				<filter
-					id="filter0_ddd_2071_7436"
-					x="0"
-					y="0"
-					width="24"
-					height="24"
-					filterUnits="userSpaceOnUse"
-					colorInterpolationFilters="sRGB"
-				>
-					<feFlood floodOpacity="0" result="BackgroundImageFix" />
-					<feColorMatrix
-						in="SourceAlpha"
-						type="matrix"
-						values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-						result="hardAlpha"
-					/>
-					<feOffset />
-					<feGaussianBlur stdDeviation="0.5" />
-					<feComposite in2="hardAlpha" operator="out" />
-					<feColorMatrix
-						type="matrix"
-						values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"
-					/>
-					<feBlend
-						mode="normal"
-						in2="BackgroundImageFix"
-						result="effect1_dropShadow_2071_7436"
-					/>
-					<feColorMatrix
-						in="SourceAlpha"
-						type="matrix"
-						values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-						result="hardAlpha"
-					/>
-					<feOffset />
-					<feGaussianBlur stdDeviation="0.5" />
-					<feComposite in2="hardAlpha" operator="out" />
-					<feColorMatrix
-						type="matrix"
-						values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"
-					/>
-					<feBlend
-						mode="normal"
-						in2="effect1_dropShadow_2071_7436"
-						result="effect2_dropShadow_2071_7436"
-					/>
-					<feColorMatrix
-						in="SourceAlpha"
-						type="matrix"
-						values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-						result="hardAlpha"
-					/>
-					<feOffset dy="1" />
-					<feGaussianBlur stdDeviation="1" />
-					<feComposite in2="hardAlpha" operator="out" />
-					<feColorMatrix
-						type="matrix"
-						values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"
-					/>
-					<feBlend
-						mode="normal"
-						in2="effect2_dropShadow_2071_7436"
-						result="effect3_dropShadow_2071_7436"
-					/>
-					<feBlend
-						mode="normal"
-						in="SourceGraphic"
-						in2="effect3_dropShadow_2071_7436"
-						result="shape"
-					/>
-				</filter>
-			</defs>
 		</svg>
 	);
 };
