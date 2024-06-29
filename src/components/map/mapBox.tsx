@@ -37,8 +37,10 @@ const storeList = [
 ];
 
 const Mapbox = () => {
-	const [mappingDistrict, setMappingDistrict] = useState<string>("");
-	const [initialViewState, setInitialViewState] = useState<any>(null);
+	const [mappingDistrict, setMappingDistrict] =
+		useState<string>("");
+	const [initialViewState, setInitialViewState] =
+		useState<any>(null);
 	const [selectedMarkerIndex, setSelectedMarkerIndex] = useState<
 		number | null
 	>(null);
@@ -66,7 +68,10 @@ const Mapbox = () => {
 			const data = await response.json();
 			setMappingDistrict(data.documents[0].region_2depth_name);
 		} catch (error) {
-			console.error("위치 정보를 가져오는데 실패했어요.:", error);
+			console.error(
+				"위치 정보를 가져오는데 실패했어요.:",
+				error
+			);
 		}
 	};
 
@@ -91,7 +96,9 @@ const Mapbox = () => {
 	const getDistrictCoordinates = (districtName: string) => {
 		return SeoulAdministrativeDistrict.flatMap((district) =>
 			district.features
-				.filter((feature) => feature.properties.name === districtName)
+				.filter(
+					(feature) => feature.properties.name === districtName
+				)
 				.flatMap((feature) => feature.geometry.coordinates)
 		);
 	};
