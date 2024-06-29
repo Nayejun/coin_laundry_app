@@ -64,3 +64,11 @@
 .option:hover {
 	background-color: #f1f1f1;
 }
+
+.mapboxgl-ctrl-logo {
+	display: none !important;
+}
+
+.mapboxgl-ctrl-bottom-right {
+	display: none !important;
+}
