@@ -3,7 +3,7 @@ import React, { FC, useState, useEffect } from "react";
 import { fakeData } from "@/data/fakeData";
 import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
 import TopNavigation from "@/app/(public)/enterAddress/components/common/TopNavigation/page";
-import SearchActive from "@/app/(public)/enterAddress/components/SearchActive/page";
+import SearchActive from "@/app/(public)/enterAddress/components/search/SearchActive/page";
 import { ClipLoader } from "react-spinners";
 import BasicDivider from "@/app/(public)/enterAddress/components/common/BasicDivider/page";
 import ProgressBar from "@/app/(public)/enterAddress/components/common/ProgressBar/page";

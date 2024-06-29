@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useState } from "react";
-import SearchInactivePage from "@/app/(public)/enterAddress/components/SearchInactivePage/page"; // Import the new component
-import SearchActivePage from "@/app/(public)/enterAddress/components/SearchActivePage/page";
+import SearchInactivePage from "@/app/(public)/enterAddress/components/search/SearchInactivePage/page"; // Import the new component
+import SearchActivePage from "@/app/(public)/enterAddress/components/search/SearchActivePage/page";
 import { useRouter } from "next/navigation";
 
 const SearchToggle: FC = ({}) => {

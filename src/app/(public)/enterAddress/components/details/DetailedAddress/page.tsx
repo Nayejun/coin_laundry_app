@@ -8,6 +8,7 @@ import ActionButton from "@/app/(public)/enterAddress/components/common/ActionBu
 import ResetButton from "@/app/(public)/enterAddress/components/common/ResetButton/page";
 import ProgressBar from "@/app/(public)/enterAddress/components/common/ProgressBar/page";
 import "@/app/global.css";
+import EnterPlaceholder from "@/app/(public)/enterAddress/components/common/EnterPlaceholder/page";
 
 const DetailedAddress: FC = () => {
 	const router = useRouter();
@@ -17,7 +18,6 @@ const DetailedAddress: FC = () => {
 		useState<string>("");
 	const [receiverName, setReceiverName] = useState<string>("");
 	const [shippingName, setShippingName] = useState<string>("");
-	const [keyboardHeight, setKeyboardHeight] = useState(0);
 	const [isButtonGray, setIsButtonGray] = useState(true);
 	const [isSaved, setIsSaved] = useState(false);
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -42,41 +42,6 @@ const DetailedAddress: FC = () => {
 				setIsSaved(true);
 			}
 		}
-
-		const handleResize = () => {
-			if (window.visualViewport) {
-				const height = window.visualViewport.height;
-				const viewportHeight =
-					document.documentElement.clientHeight;
-				const calculatedKeyboardHeight = viewportHeight - height;
-
-				console.log(
-					`Keyboard height: ${calculatedKeyboardHeight}px`
-				);
-
-				setKeyboardHeight(
-					calculatedKeyboardHeight > 0
-						? calculatedKeyboardHeight
-						: 0
-				);
-			}
-		};
-
-		if (window.visualViewport) {
-			window.visualViewport.addEventListener(
-				"resize",
-				handleResize
-			);
-		}
-
-		return () => {
-			if (window.visualViewport) {
-				window.visualViewport.removeEventListener(
-					"resize",
-					handleResize
-				);
-			}
-		};
 	}, []);
 
 	const handleBackNavigation = () => {
@@ -146,11 +111,11 @@ const DetailedAddress: FC = () => {
 							<InputStatic value={detailedAddress} />
 						</div>
 					) : (
-						<div className="flex items-center border rounded-md w-full max-w-[430px] h-[48px] mt-[8px] mb-[16px] px-[16px] py-[12px] bg-static-white border-line-normal">
-							<input
-								type="text"
+						<div className="mt-[8px] mb-[16px]">
+							<EnterPlaceholder
+								id="detailedAddressInput"
 								placeholder="상세 주소 입력"
-								className="input-common bg-static-white text-label-normal w-full outline-none"
+								className="input-common bg-static-white text-label-normal w-full outline-none px-[16px] py-[12px] border-line-normal"
 								value={detailedAddress}
 								onChange={handleDetailedAddressChange}
 								ref={inputRef}
@@ -160,14 +125,14 @@ const DetailedAddress: FC = () => {
 				</div>
 			</div>
 			{/**/}
-			<div className="w-full max-w-[430px] bg-static-white px-[24px] text-body-1-normal font-medium mb-[16px]">
+			<div className="w-full max-w-[430px] bg-static-white px-[24px] text-body-1-normal font-medium pb-[16px] ">
 				<div className="text-label-1-normal font-semibold mb-[8px]">
 					배송지 이름
 				</div>
 				<InputStatic value={shippingName} />
 			</div>
 			{/**/}
-			<div className="w-full max-w-[430px] bg-static-white px-[24px] text-body-1-normal font-medium mb-[16px]">
+			<div className="w-full max-w-[430px] bg-static-white px-[24px] text-body-1-normal font-medium pb-[16px]">
 				<div className="text-label-1-normal font-semibold mb-[8px]">
 					받는 분
 				</div>
@@ -180,7 +145,6 @@ const DetailedAddress: FC = () => {
 				className="fixed bottom-0 left-0 right-0 mx-auto w-full max-w-[430px] bg-white transition-transform duration-300"
 				style={{
 					height: "100px",
-					transform: `translateY(-${keyboardHeight}px)`,
 				}}
 			>
 				{isButtonGray ? (

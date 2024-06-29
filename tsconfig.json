@@ -30,7 +30,9 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		".next/types/**/*.ts"
+		".next/types/**/*.ts",
+		"src/testConnection.mjs",
+		"src/lib/mongoose.mjs"
 	],
 	"exclude": ["node_modules"]
 }

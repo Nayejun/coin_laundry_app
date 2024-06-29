@@ -1,14 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import InputStatic from "@/app/(public)/enterAddress/components/common/InputStatic/page";
-import TopNavigation from "@/app/(public)/enterAddress/components/common/TopNavigation/page";
-import ActionButton from "@/components/ui/ActionButton";
-import ResetButton from "@/app/(public)/enterAddress/components/common/ResetButton/page";
-import { set } from "react-hook-form";
 
 const ShipReceiverAddressDetailEntryCellular: React.FC = () => {
-	const router = useRouter();
 
 	const [savedSelectedAddress, setSavedSelectedAddress] =
 		useState<string>("");
@@ -47,13 +41,6 @@ const ShipReceiverAddressDetailEntryCellular: React.FC = () => {
 			setPhoneNumber(localStorage.getItem("phoneNumber") || "");
 		}
 	}, []);
-
-	const handleReset = () => {
-		if (typeof window !== "undefined") {
-			localStorage.removeItem("detailedAddress");
-		}
-		router.push("/enterAddress/inputAddress/addDetailedAddress");
-	};
 
 	return (
 		<div>

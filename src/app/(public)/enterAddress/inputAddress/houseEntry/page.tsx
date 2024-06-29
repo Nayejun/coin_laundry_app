@@ -5,9 +5,9 @@ import TopNavigation from "@/app/(public)/enterAddress/components/common/TopNavi
 import ActionButton from "@/app/(public)/enterAddress/components/common/ActionButton/page";
 import ResetButton from "@/app/(public)/enterAddress/components/common/ResetButton/page";
 import ProgressBar from "@/app/(public)/enterAddress/components/common/ProgressBar/page";
-import EnterPlaceholderSmaller from "@/app/(public)/enterAddress/components/EnterPlaceHolderSmaller/page";
+import EnterPlaceHolderSmaller from "@/app/(public)/enterAddress/components/common/EnterPlaceHolderSmaller/page";
 import InfoIcon from "@/assets/icons/others/information.svg";
-import CustomRadioButton from "@/app/(public)/enterAddress/components/CustomRadioButton/page";
+import CustomRadioButton from "@/app/(public)/enterAddress/components/entry/CustomRadioButton/page";
 import ShipReceiveAddressDetail from "@/app/(public)/enterAddress/components/common/ShipReceiverAddressDetail/page";
 
 const HouseEntry: React.FC = () => {
@@ -96,7 +96,7 @@ const HouseEntry: React.FC = () => {
 					/>
 					{entryMethod === "공동현관 비밀번호" && (
 						<div className="mt-2 ml-7 mr-6">
-							<EnterPlaceholderSmaller
+							<EnterPlaceHolderSmaller
 								id="password-input"
 								placeholder="예) 종 1234 열쇠"
 								value={entryInput}
@@ -156,7 +156,7 @@ const HouseEntry: React.FC = () => {
 					/>
 					{entryMethod === "기타" && (
 						<div className="mt-2 ml-7 mr-6">
-							<EnterPlaceholderSmaller
+							<EnterPlaceHolderSmaller
 								id="other-input"
 								placeholder="예) 뒤쪽 문은 항상 열려있습니다"
 								value={entryInput}
@@ -175,7 +175,7 @@ const HouseEntry: React.FC = () => {
 				<ShipReceiveAddressDetail />
 			</div>
 			<div className="flex-grow w-full max-w-[430px] bg-static-white"></div>
-			<div className="fixed bottom-24 w-full max-w-[430px] h-[1px] bg-line-normal border shadow-elevation-shadow-emphasize">
+			<div className="fixed bottom-[99px] w-full max-w-[430px] h-[1px] bg-line-normal border shadow-elevation-shadow-emphasize">
 				{" "}
 				{/* Adjusted bottom position */}
 				<ActionButton

@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import CustomSelect from "@/app/(public)/enterAddress/components/CustomSelect/page"; // Adjust the path as needed
+import CustomSelect from "@/app/(public)/enterAddress/components/carrier/CustomSelect/page"; // Adjust the path as needed
 import { Option } from "@/lib/types"; // Adjust the path as needed
+import EnterPlaceholder from "@/app/(public)/enterAddress/components/common/EnterPlaceholder/page";
 
 const CarrierOption: React.FC = () => {
 	const [carrierOption, setCarrierOption] = useState<string>("");
@@ -10,9 +11,12 @@ const CarrierOption: React.FC = () => {
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			setCarrierOption(
-				localStorage.getItem("carrierOption") || "문 앞에 놓아 주세요"
+				localStorage.getItem("carrierOption") ||
+					"문 앞에 놓아 주세요"
 			);
-			setCarrierInput(localStorage.getItem("carrierInput") || "");
+			setCarrierInput(
+				localStorage.getItem("carrierInput") || ""
+			);
 		}
 	}, []);
 
@@ -28,12 +32,17 @@ const CarrierOption: React.FC = () => {
 	}, [carrierOption]);
 
 	useEffect(() => {
-		if (typeof window !== "undefined" && carrierOption === "직접 입력") {
+		if (
+			typeof window !== "undefined" &&
+			carrierOption === "직접 입력"
+		) {
 			localStorage.setItem("carrierInput", carrierInput);
 		}
 	}, [carrierInput, carrierOption]);
 
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	const handleInputChange = (
+		e: React.ChangeEvent<HTMLInputElement>
+	) => {
 		setCarrierInput(e.target.value);
 	};
 
@@ -59,14 +68,16 @@ const CarrierOption: React.FC = () => {
 					options={options}
 				/>
 				{carrierOption === "직접 입력" && (
-					<input
-						id="carrier-custom-input"
-						type="text"
-						placeholder="직접 입력해 주세요"
-						value={carrierInput}
-						onChange={handleInputChange}
-						className="border border-line-normal text-body-1-normal rounded-md px-[16px] py-[12px] mt-[8px] w-full max-w-[430px] outline-none"
-					/>
+					<div className="mt-[12px]">
+						<EnterPlaceholder
+							type="text"
+							id="carrier-custom-input"
+							placeholder="직접 입력해 주세요"
+							value={carrierInput}
+							onChange={handleInputChange}
+							
+						/>
+					</div>
 				)}
 			</div>
 		</div>

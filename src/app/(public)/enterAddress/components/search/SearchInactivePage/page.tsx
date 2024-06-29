@@ -1,6 +1,6 @@
 "use client";
 import React, { FC, useEffect, useState } from "react";
-import SearchInactive from "@/app/(public)/enterAddress/components/SearchInactive/page";
+import SearchInactive from "@/app/(public)/enterAddress/components/search/SearchInactive/page";
 import TopNavigation from "@/app/(public)/enterAddress/components/common/TopNavigation/page";
 import { useRouter } from "next/navigation";
 import ProgressBar from "@/app/(public)/enterAddress/components/common/ProgressBar/page";

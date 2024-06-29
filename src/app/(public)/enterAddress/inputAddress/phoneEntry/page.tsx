@@ -54,13 +54,14 @@ const CellularInput: React.FC = () => {
 				<ShipReceiverAddressDetailEntryCarrier />
 			</div>
 			<div className="flex-grow w-full max-w-[430px] bg-static-white"></div>
-			<div className="fixed bottom-24 w-full max-w-[430px] h-[1px] bg-line-normal border shadow-elevation-shadow-emphasize">
+			<div className="fixed bottom-[99px] w-full max-w-[430px] h-[1px] bg-line-normal border shadow-elevation-shadow-emphasize">
 				<ActionButton
 					label="다음"
 					onClick={handleNextNavigation}
 					className="w-full text-primary-normal"
 				/>
 			</div>
+			<div className="flex-grow w-full max-w-[430px] bg-static-white mb-[100px]"></div>
 		</div>
 	);
 };
