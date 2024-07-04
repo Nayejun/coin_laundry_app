@@ -31,10 +31,10 @@ const CellularInput: React.FC = () => {
 		}
 	};
 
-  const goToListOfAddresses = () => {
-    if (phoneNumber.length === 13) {
+	const goToListOfAddresses = () => {
+		if (phoneNumber.length === 13) {
 			localStorage.setItem("phoneNumber", phoneNumber);
-      convertPhoneNumberToJson();
+			convertPhoneNumberToJson();
 			// Ensure the phone number is fully entered
 			router.push("/crudAddress/addressList"); // Adjust the route as needed
 		} else {
@@ -42,23 +42,21 @@ const CellularInput: React.FC = () => {
 		}
 	};
 
-  const convertPhoneNumberToJson = () => {
-    const keys = [
-      'phoneNumber'
-    ];
-  
-    keys.forEach(key => {
-      const value = localStorage.getItem(key);
-      if (value) {
-        try {
-          JSON.parse(value); // Check if it's already JSON
-        } catch (error) {
-          // If it's not JSON, convert it to JSON and save it back
-          localStorage.setItem(key, JSON.stringify(value));
-        }
-      }
-    });
-  };
+	const convertPhoneNumberToJson = () => {
+		const keys = ["phoneNumber"];
+
+		keys.forEach((key) => {
+			const value = localStorage.getItem(key);
+			if (value) {
+				try {
+					JSON.parse(value); // Check if it's already JSON
+				} catch (error) {
+					// If it's not JSON, convert it to JSON and save it back
+					localStorage.setItem(key, JSON.stringify(value));
+				}
+			}
+		});
+	};
 
 	return (
 		<div className="flex flex-col items-center bg-gray-50 min-h-screen overflow-hidden">
@@ -70,14 +68,13 @@ const CellularInput: React.FC = () => {
 				>
 					<ResetButton label="초기화" onClick={handleReset} />
 				</TopNavigation>
-        <div className="ml-[24px] mt-[30px] text-headline-1 font-semibold">
-					벌써 배송지를 추가 하셨어요? 
+				<div className="ml-[24px] mt-[30px] text-headline-1 font-semibold">
+					벌써 배송지를 추가 하셨어요?
 				</div>
-        <div className="text-base mb-3 ml-6">
-          전화번호로 조회 해드릴게요!
-        </div>
-				<div className="w-full max-w-[430px] bg-static-white px-[24px] text-body-1-normal font-medium mb-[30px]">
+				<div className="text-base mb-3 ml-6">
+					전화번호로 조회 해드릴게요!
 				</div>
+				<div className="w-full max-w-[430px] bg-static-white px-[24px] text-body-1-normal font-medium mb-[30px]"></div>
 				<div className="mx-[24px] mb-[16px]">
 					<CustomPhoneInput
 						value={phoneNumber}
@@ -92,7 +89,7 @@ const CellularInput: React.FC = () => {
 					onClick={handleNextNavigation}
 					className="w-1/2 border-[2px] border-label-disable bg-static-white text-label-neutral"
 				/>
-        <ActionButtonHalfRight
+				<ActionButtonHalfRight
 					label="예"
 					onClick={goToListOfAddresses}
 					className="-w-1/2 bg-primary-normal text-static-white"

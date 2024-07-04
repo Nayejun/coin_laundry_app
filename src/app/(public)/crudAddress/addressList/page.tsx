@@ -13,7 +13,7 @@ import TopNavigation from "@/app/(public)/enterAddress/components/common/TopNavi
 import { useLocalStorage } from "@/app/hooks/useLocalStorage";
 import BasicDivider from "../../enterAddress/components/common/BasicDivider/page";
 import ActionButtonWhite from "@/app/(public)/crudAddress/components/ActionButtonWhite/page";
-
+import Toast from "@/components/crudAddress/Toast";
 
 interface Address {
 	_id: string;
@@ -31,6 +31,8 @@ const AddressList: React.FC = () => {
 	const [selectedAddressId, setSelectedAddressId] = useState<
 		string | null
 	>(null);
+	const [showToast, setShowToast] = useState<boolean>(false);
+	const [toastMessage, setToastMessage] = useState<string>("");
 	const [phoneNumber] = useLocalStorage<string>(
 		"phoneNumber",
 		""
@@ -64,6 +66,11 @@ const AddressList: React.FC = () => {
 					)
 				);
 				setShowDeleteModal(false);
+				setToastMessage("배송지가 삭제되었습니다.");
+				setShowToast(true);
+				setTimeout(() => {
+					setShowToast(false);
+				}, 5000);
 			} catch (error) {
 				console.error("Failed to delete address:", error);
 			}
@@ -91,6 +98,11 @@ const AddressList: React.FC = () => {
 				});
 				setAddresses(updatedAddresses);
 				setShowDefaultModal(false);
+				setToastMessage("기본 배송지가 변경되었습니다.");
+				setShowToast(true);
+				setTimeout(() => {
+					setShowToast(false);
+				}, 5000);
 			} catch (error) {
 				console.error("Failed to set default address:", error);
 			}
@@ -102,7 +114,7 @@ const AddressList: React.FC = () => {
 	};
 
 	const handleEdit = (id: string) => {
-    console.log(`the id is: ${id}`);
+		console.log(`the id is: ${id}`);
 		localStorage.setItem("editAddressId", JSON.stringify(id));
 		router.push(`/crudAddress/editAddress/${id}`);
 	};
@@ -114,6 +126,7 @@ const AddressList: React.FC = () => {
 	return (
 		<>
 			<div className="flex flex-col items-center bg-gray-50 min-h-screen">
+				<Toast message={toastMessage} show={showToast} />
 				<div className="w-full max-w-[430px] bg-static-white flex flex-col pt-[5px]">
 					<TopNavigation
 						text="배송지 설정"
@@ -157,7 +170,7 @@ const AddressList: React.FC = () => {
 							</div>
 
 							<div className="mt-2 flex">
-                <div className="w-[32px]" />
+								<div className="w-[32px]" />
 								<button
 									onClick={() => handleEdit(address._id)}
 									className="text-caption-1 font-medium px-[10px] py-[6px] border border-label-disable rounded-xl mr-2"
@@ -200,23 +213,24 @@ const AddressList: React.FC = () => {
 					{"    "}
 				</div>
 
-        <ActionButtonWhite label="새 배송지 추가" onClick={handleAddNewAddress}/>
-				
+				<ActionButtonWhite
+					label="새 배송지 추가"
+					onClick={handleAddNewAddress}
+				/>
+
 				<CustomModal
 					isOpen={showDeleteModal}
 					onClose={() => setShowDeleteModal(false)}
-          onConfirm={handleDelete}
+					onConfirm={handleDelete}
 					title="배송지를 삭제하시겠어요?"
-				>
-				</CustomModal>
+				></CustomModal>
 
 				<CustomModal
 					isOpen={showDefaultModal}
 					onClose={() => setShowDefaultModal(false)}
-          onConfirm={handleSetDefault}
+					onConfirm={handleSetDefault}
 					title="기본 배송지로 변경하시겠어요?"
-				>
-				</CustomModal>
+				></CustomModal>
 				<div className="flex-grow w-full max-w-[430px] bg-static-white"></div>
 			</div>
 		</>

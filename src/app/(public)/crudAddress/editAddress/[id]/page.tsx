@@ -10,6 +10,7 @@ import TopNavigation from "@/app/(public)/crudAddress/components/common/TopNavig
 import InputNonStatic from "@/app/(public)/crudAddress/components/common/InputNonStatic/page";
 import { clearSpecificLocalStorageItems } from "@/utils/localStorage";
 import ActionButton from "@/app/(public)/enterAddress/components/common/ActionButton/page";
+import Toast from "@/components/crudAddress/Toast";
 
 const EditAddress: React.FC = () => {
 	const router = useRouter();
@@ -26,6 +27,8 @@ const EditAddress: React.FC = () => {
 		carrierOption: "",
 		carrierInput: "",
 	});
+	const [showToast, setShowToast] = useState<boolean>(false);
+	const [toastMessage, setToastMessage] = useState<string>("");
 
 	const safeJSONParse = (value: string) => {
 		try {
@@ -100,7 +103,13 @@ const EditAddress: React.FC = () => {
 	const handleUpdate = async () => {
 		try {
 			await updateInputAddress(id, address);
-			router.push("/crudAddress/addressList");
+			setToastMessage("배송지가 수정되었습니다.");
+			setShowToast(true);
+			setTimeout(() => {
+				setShowToast(false);
+				router.push("/crudAddress/addressList");
+			}, 5000);
+			
 		} catch (error) {
 			console.error("Error updating address:", error);
 		}
@@ -123,6 +132,7 @@ const EditAddress: React.FC = () => {
 
 	return (
 		<div className="flex flex-col items-center bg-gray-50 min-h-screen">
+			<Toast message={toastMessage} show={showToast} />
 			<div className="w-full max-w-[430px] bg-static-white flex flex-col pb-[16px] overflow-auto">
 				<TopNavigation
 					text="배송지 수정"
