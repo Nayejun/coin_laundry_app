@@ -35,7 +35,7 @@ const InactiveLaundryPage = () => {
 	const progressPercentage = (remainingTime / totalTime) * 100;
 
 	const handleSetInfo = () => {
-		router.push("/enterAddress/inputAddress/shippingName"); // Navigate to the shippingName page
+		router.push("/enterAddress/inputAddress/phoneStart"); // Navigate to the shippingName page
 	};
 
 	return (

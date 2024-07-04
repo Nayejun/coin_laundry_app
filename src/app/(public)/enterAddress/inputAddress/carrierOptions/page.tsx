@@ -39,7 +39,7 @@ const CarrierOptions: React.FC = () => {
 				<ShipReceiverAddressDetailEntry />
 			</div>
 			<div className="flex-grow w-full max-w-[430px] bg-static-white"></div>
-			<div className="fixed bottom-[99px] w-full max-w-[430px] h-[1px] bg-line-normal border shadow-elevation-shadow-emphasize">
+			<div className="fixed bottom-0 w-full max-w-[430px] h-[100px] shadow-elevation-shadow-normal-top">
 				<ActionButton
 					label="다음"
 					onClick={handleNextNavigation}

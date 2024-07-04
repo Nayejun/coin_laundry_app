@@ -24,7 +24,7 @@ const CustomPhoneInput: React.FC<CustomPhoneInputProps> = ({ value, onChange }) 
 			type="text"
 			value={value}
 			onChange={handleInputChange}
-			placeholder="전화번호를 입력해 주세요"
+			placeholder="ex) 010-1234-5678"
 			className="border border-line-normal text-body-1-normal rounded-md px-[16px] py-[12px] w-full max-w-[430px] outline-none"
 		/>
 	);

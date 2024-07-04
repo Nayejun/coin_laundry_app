@@ -1,5 +1,3 @@
-// src/utils/api.ts
-
 export const saveInputAddress = async (data: any) => {
 	try {
 		const response = await fetch("/api/input-address", {
@@ -11,12 +9,42 @@ export const saveInputAddress = async (data: any) => {
 		});
 
 		if (!response.ok) {
-			throw new Error("Failed to save input address");
+			const errorDetails = await response.json();
+			throw new Error(
+				`Failed to save input address: ${errorDetails.message}`
+			);
 		}
 
 		return await response.json();
 	} catch (error) {
 		console.error("Error saving input address:", error);
+		throw error;
+	}
+};
+
+export const getAddressesByPhoneNumber = async (
+	phoneNumber: string
+) => {
+	try {
+		const response = await fetch(
+			`/api/input-address?phoneNumber=${encodeURIComponent(
+				phoneNumber
+			)}`,
+			{
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			}
+		);
+
+		if (!response.ok) {
+			throw new Error("Failed to fetch input addresses");
+		}
+
+		return await response.json();
+	} catch (error) {
+		console.error("Error fetching input addresses:", error);
 		throw error;
 	}
 };
@@ -29,7 +57,7 @@ export const getInputAddress = async (id: string) => {
 				"Content-Type": "application/json",
 			},
 		});
-
+		
 		if (!response.ok) {
 			throw new Error("Failed to fetch input address");
 		}

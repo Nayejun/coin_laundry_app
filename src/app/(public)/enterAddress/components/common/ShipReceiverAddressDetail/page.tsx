@@ -10,7 +10,7 @@ const ShipReceiverAddressDetail: React.FC = () => {
 	const router = useRouter();
 
 	const [receiverName, setReceiverName] = useState<string>("");
-	const [savedSelectedAddress, setSavedSelectedAddress] =
+	const [selectedAddress, setSelectedAddress] =
 		useState<string>("");
 	const [detailedAddress, setDetailedAddress] =
 		useState<string>("");
@@ -22,7 +22,7 @@ const ShipReceiverAddressDetail: React.FC = () => {
 			setShippingName(
 				localStorage.getItem("shippingName") || ""
 			);
-			setSavedSelectedAddress(
+			setSelectedAddress(
 				localStorage.getItem("selectedAddress") || ""
 			);
 			setReceiverName(
@@ -64,7 +64,7 @@ const ShipReceiverAddressDetail: React.FC = () => {
 			</div>
 			<div className="w-full max-w-[430px] bg-static-white px-[24px] text-body-1-normal font-medium mb-[16px]">
 				<div className="text-label-1-normal font-semibold mb-[8px]">
-					<InputStatic value={savedSelectedAddress} />
+					<InputStatic value={selectedAddress} />
 				</div>
 				{detailedAddress && (
 					<div className="w-full max-w-[430px] bg-static-white text-body-1-normal font-medium">

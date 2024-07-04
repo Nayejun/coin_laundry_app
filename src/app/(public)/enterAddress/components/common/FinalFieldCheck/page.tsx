@@ -4,7 +4,7 @@ import InputStatic from "@/app/(public)/enterAddress/components/common/InputStat
 
 const ShipReceiverAddressDetailEntryCellular: React.FC = () => {
 
-	const [savedSelectedAddress, setSavedSelectedAddress] =
+	const [selectedAddress, setSelectedAddress] =
 		useState<string>("");
 	const [detailedAddress, setDetailedAddress] =
 		useState<string>("");
@@ -18,7 +18,7 @@ const ShipReceiverAddressDetailEntryCellular: React.FC = () => {
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
-			setSavedSelectedAddress(
+			setSelectedAddress(
 				localStorage.getItem("selectedAddress") || ""
 			);
 			setDetailedAddress(
@@ -74,7 +74,7 @@ const ShipReceiverAddressDetailEntryCellular: React.FC = () => {
 			</div>
 			<div className="w-full max-w-[430px] bg-static-white px-[24px] text-body-1-normal font-medium mb-[16px]">
 				<div className="text-label-1-normal font-semibold mb-[8px]">
-					<InputStatic value={savedSelectedAddress} />
+					<InputStatic value={selectedAddress} />
 				</div>
 				{detailedAddress && (
 					<div className="w-full max-w-[430px] bg-static-white text-body-1-normal font-medium">

@@ -84,7 +84,7 @@ const ShippingName: FC = () => {
 				</div>
 			</div>
 			<div className="flex-grow w-full max-w-[430px] bg-static-white"></div>
-			<div className="fixed bottom-[100px] w-full max-w-[430px] h-[1px] bg-line-normal border shadow-elevation-shadow-emphasize">
+			<div className="fixed bottom-[0px] w-full max-w-[430px] h-[100px] shadow-elevation-shadow-normal-top z-50">
 				{isButtonGray ? (
 					<ActionButtonGray
 						label="다음"

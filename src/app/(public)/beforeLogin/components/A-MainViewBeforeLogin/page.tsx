@@ -19,7 +19,7 @@ const MainView: React.FC = () => {
 	const router = useRouter(); // Initialize the router
 
 	const handleSetInfo = () => {
-		router.push("/enterAddress/inputAddress/shippingName"); // Navigate to the shippingName page
+		router.push("/enterAddress/inputAddress/phoneStart"); // Navigate to the shippingName page
 	};
 
 	const navigateToUserGuide = () => {
@@ -95,7 +95,7 @@ const MainView: React.FC = () => {
 					<LaundryItem
 						icon={
 							<div className="relative">
-								<TShirtIconSmall className="absolute bottom-[4px] right-[7px] w-[35.45px] h-[35.45px]" />
+								<TShirtIconSmall className="absolute bottom-[3.1px] right-[7px] w-[35.45px] h-[35.45px]" />
 								<BedIconSmall className="relative w-[35.45px] h-[35.45px] top-[4px] left-[7px]" />
 							</div>
 						}

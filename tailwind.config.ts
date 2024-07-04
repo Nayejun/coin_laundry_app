@@ -4,7 +4,6 @@ import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
 	content: [
-		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
@@ -162,9 +161,7 @@ const config: Config = {
 				"elevation-shadow-heavy": `0 0 8px 0 rgba(0, 0, 0, 0.08), 
           0 8px 16px 0 rgba(0, 0, 0, 0.08),
           0 16px 20px 0 rgba(0, 0, 0, 0.12)`,
-				"elevation-shadow-normal-top": `0 -1px 1px 0 rgba(0, 0, 0, 0.08), 
-          0 -1px 1px 0 rgba(0, 0, 0, 0.08),
-          0 -2px 2px 0 rgba(0, 0, 0, 0.12)`,
+				"elevation-shadow-normal-top": `0 -2px 4px 0 rgba(0, 0, 0, 0.1)`,
 				"elevation-shadow-emphasize-top": `0 -1px 1px 0 rgba(0, 0, 0, 0.08), 
           0 -1px 4px 0 rgba(0, 0, 0, 0.08),
           0 -2px 8px 0 rgba(0, 0, 0, 0.12)`,

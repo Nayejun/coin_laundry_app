@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import TopNavigation from "@/app/(public)/enterAddress/components/common/TopNavigation/page";
 import ActionButton from "@/app/(public)/enterAddress/components/common/ActionButton/page";
 import ResetButton from "@/app/(public)/enterAddress/components/common/ResetButton/page";
-import ProgressBar from "../../components/common/ProgressBar/page";
+import ProgressBar from "@/app/(public)/enterAddress/components/common/ProgressBar/page";
 import FinalFieldCheck from "@/app/(public)/enterAddress/components/common/FinalFieldCheck/page";
-import { combineAndSaveData, clearLocalStorage } from "@/utils/localStorage";
+import { combineAndSaveData, clearSpecificLocalStorageItems } from "@/utils/localStorage";
 import { saveInputAddress } from "@/utils/api";
 import { convertLocalStorageToJson } from "@/utils/convertLocalStorage";
 
@@ -26,8 +26,8 @@ const FinalAddressCheck: FC = () => {
       const combinedData = combineAndSaveData();
       console.log('Sending data:', combinedData);  // Log the data being sent
       await saveInputAddress(combinedData);
-      clearLocalStorage();
-      router.push("/enterAddress/inputAddress/passedPlease"); // Navigate to the FinalAddressCheck page
+      clearSpecificLocalStorageItems(); // Clear specific items except phoneNumber
+      router.push("/crudAddress/addressList"); // Navigate to the FinalAddressCheck page
     } catch (err) {
       console.error('Error in handleSave:', err);
       // Optionally, display an error message to the user here
@@ -52,7 +52,7 @@ const FinalAddressCheck: FC = () => {
           <FinalFieldCheck />
         </div>
       </div>
-      <div className="fixed bottom-[99px] w-full max-w-[430px] h-[1px] bg-line-normal border shadow-elevation-shadow-emphasize ">
+      <div className="fixed bottom-0 w-full max-w-[430px] h-[100px] shadow-elevation-shadow-normal-top">
         <ActionButton label="저장" onClick={handleSave} className="w-full text-primary-normal" />
       </div>
     </div>
