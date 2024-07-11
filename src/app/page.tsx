@@ -13,7 +13,11 @@ export default function HomePage() {
 
 	return (
 		<div>
-			{isLoggedin ? <AfterLoginHomePage /> : <BeforeLoginHomePage />}
+			{isLoggedin ? (
+				<AfterLoginHomePage />
+			) : (
+				<BeforeLoginHomePage />
+			)}
 		</div>
 	);
 }
